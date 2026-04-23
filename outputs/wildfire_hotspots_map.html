@@ -1,0 +1,4087 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_222df4fa4d5aad3010874986d0307ed3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+position: fixed;
+bottom: 30px;
+left: 30px;
+width: 240px;
+z-index: 9999;
+background-color: white;
+border: 2px solid grey;
+border-radius: 6px;
+padding: 10px;
+font-size: 14px;
+">
+<b>Top 120 strongest detections</b><br>
+Marker size and color reflect FRP intensity.<br><br>
+<span style="color:blue;">●</span> Low<br>
+<span style="color:orange;">●</span> Medium<br>
+<span style="color:red;">●</span> High<br>
+<span style="color:darkred;">●</span> Extreme
+</div>
+    
+            <div class="folium-map" id="map_222df4fa4d5aad3010874986d0307ed3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_222df4fa4d5aad3010874986d0307ed3 = L.map(
+                "map_222df4fa4d5aad3010874986d0307ed3",
+                {
+                    center: [0.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 1,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_86bbb9b2d4c95b8c7542724e54830b98 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_86bbb9b2d4c95b8c7542724e54830b98.addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+            map_222df4fa4d5aad3010874986d0307ed3.fitBounds(
+                [[-41.20037, -155.299], [60.42697, 149.20033]],
+                {}
+            );
+        
+    
+            var circle_marker_d0c9c4e0ed7c71dbbe6c843b8941b3e7 = L.circleMarker(
+                [19.39612, -155.28705],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_0fa08453198ea0ecb4566ca7b235c5a3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0be719ae22e0daedd6762b0d48b75182 = $(`<div id="html_0be719ae22e0daedd6762b0d48b75182" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 976.96<br>     <b>Brightness TI4:</b> 349.57<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.3961, -155.2870     </div>`)[0];
+                popup_0fa08453198ea0ecb4566ca7b235c5a3.setContent(html_0be719ae22e0daedd6762b0d48b75182);
+            
+        
+
+        circle_marker_d0c9c4e0ed7c71dbbe6c843b8941b3e7.bindPopup(popup_0fa08453198ea0ecb4566ca7b235c5a3)
+        ;
+
+        
+    
+    
+            circle_marker_d0c9c4e0ed7c71dbbe6c843b8941b3e7.bindTooltip(
+                `<div>
+                     Extreme | FRP: 976.96
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c74ed80fab0cbf25b7c965820288be9d = L.circleMarker(
+                [19.39702, -155.29103],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_890371e9f5dd25787c5c2eb9960a525d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_087032ea919b2f95f79ac5331cfeb2c2 = $(`<div id="html_087032ea919b2f95f79ac5331cfeb2c2" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 976.96<br>     <b>Brightness TI4:</b> 344.54<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.3970, -155.2910     </div>`)[0];
+                popup_890371e9f5dd25787c5c2eb9960a525d.setContent(html_087032ea919b2f95f79ac5331cfeb2c2);
+            
+        
+
+        circle_marker_c74ed80fab0cbf25b7c965820288be9d.bindPopup(popup_890371e9f5dd25787c5c2eb9960a525d)
+        ;
+
+        
+    
+    
+            circle_marker_c74ed80fab0cbf25b7c965820288be9d.bindTooltip(
+                `<div>
+                     Extreme | FRP: 976.96
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5e67ec447f0ac26e23722cde4f0d0a8f = L.circleMarker(
+                [9.9753, -13.04737],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_f67f854ac6618d9e7a422c187f806b27 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_60e1dba17a1452edf0a802720828ad69 = $(`<div id="html_60e1dba17a1452edf0a802720828ad69" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 421.86<br>     <b>Brightness TI4:</b> 333.42<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.9753, -13.0474     </div>`)[0];
+                popup_f67f854ac6618d9e7a422c187f806b27.setContent(html_60e1dba17a1452edf0a802720828ad69);
+            
+        
+
+        circle_marker_5e67ec447f0ac26e23722cde4f0d0a8f.bindPopup(popup_f67f854ac6618d9e7a422c187f806b27)
+        ;
+
+        
+    
+    
+            circle_marker_5e67ec447f0ac26e23722cde4f0d0a8f.bindTooltip(
+                `<div>
+                     Extreme | FRP: 421.86
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4df07f3ec3da22559cd752de11465e45 = L.circleMarker(
+                [-36.74699, 141.38882],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_935177bb5aefecda159adf5f469da95c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d037a0250e6245af98b939be5a251c9 = $(`<div id="html_6d037a0250e6245af98b939be5a251c9" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:06:00<br>     <b>FRP:</b> 366.26<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -36.7470, 141.3888     </div>`)[0];
+                popup_935177bb5aefecda159adf5f469da95c.setContent(html_6d037a0250e6245af98b939be5a251c9);
+            
+        
+
+        circle_marker_4df07f3ec3da22559cd752de11465e45.bindPopup(popup_935177bb5aefecda159adf5f469da95c)
+        ;
+
+        
+    
+    
+            circle_marker_4df07f3ec3da22559cd752de11465e45.bindTooltip(
+                `<div>
+                     Extreme | FRP: 366.26
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_698e1d573a65d491a6f211f1c0a7102a = L.circleMarker(
+                [25.44683, 97.6934],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_c53c858be04ce7887f2211f5c40e22de = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e79d17d6622035a9bafdf643cb27b5c8 = $(`<div id="html_e79d17d6622035a9bafdf643cb27b5c8" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:05:00<br>     <b>FRP:</b> 339.05<br>     <b>Brightness TI4:</b> 341.01<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 25.4468, 97.6934     </div>`)[0];
+                popup_c53c858be04ce7887f2211f5c40e22de.setContent(html_e79d17d6622035a9bafdf643cb27b5c8);
+            
+        
+
+        circle_marker_698e1d573a65d491a6f211f1c0a7102a.bindPopup(popup_c53c858be04ce7887f2211f5c40e22de)
+        ;
+
+        
+    
+    
+            circle_marker_698e1d573a65d491a6f211f1c0a7102a.bindTooltip(
+                `<div>
+                     Extreme | FRP: 339.05
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8a83f4e7bbca766485c9a00c0b88560a = L.circleMarker(
+                [9.34335, -12.90421],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_85496bcabe4e2e4ea718049078ade0d2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d13e8e7afd6ea02359ce585c90d7ced9 = $(`<div id="html_d13e8e7afd6ea02359ce585c90d7ced9" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 335.50<br>     <b>Brightness TI4:</b> 339.31<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.3433, -12.9042     </div>`)[0];
+                popup_85496bcabe4e2e4ea718049078ade0d2.setContent(html_d13e8e7afd6ea02359ce585c90d7ced9);
+            
+        
+
+        circle_marker_8a83f4e7bbca766485c9a00c0b88560a.bindPopup(popup_85496bcabe4e2e4ea718049078ade0d2)
+        ;
+
+        
+    
+    
+            circle_marker_8a83f4e7bbca766485c9a00c0b88560a.bindTooltip(
+                `<div>
+                     Extreme | FRP: 335.50
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c346aba55e173397f21c5029b8abcbfc = L.circleMarker(
+                [9.26852, -12.80528],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.74528444363018, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_1b1408eae2415f5f031445396871a7c3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_618f56c86d275379f1d0271f5e911b61 = $(`<div id="html_618f56c86d275379f1d0271f5e911b61" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 305.92<br>     <b>Brightness TI4:</b> 344.11<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.2685, -12.8053     </div>`)[0];
+                popup_1b1408eae2415f5f031445396871a7c3.setContent(html_618f56c86d275379f1d0271f5e911b61);
+            
+        
+
+        circle_marker_c346aba55e173397f21c5029b8abcbfc.bindPopup(popup_1b1408eae2415f5f031445396871a7c3)
+        ;
+
+        
+    
+    
+            circle_marker_c346aba55e173397f21c5029b8abcbfc.bindTooltip(
+                `<div>
+                     Extreme | FRP: 305.92
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ab23fdfe526984d3b6c9252e4a1b3372 = L.circleMarker(
+                [9.33372, -12.88903],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.741567365181144, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_e2078527eec655dbdb42d87dd236d904 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aafa460b013bedcb4cdc9f4cda64d990 = $(`<div id="html_aafa460b013bedcb4cdc9f4cda64d990" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 305.66<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.3337, -12.8890     </div>`)[0];
+                popup_e2078527eec655dbdb42d87dd236d904.setContent(html_aafa460b013bedcb4cdc9f4cda64d990);
+            
+        
+
+        circle_marker_ab23fdfe526984d3b6c9252e4a1b3372.bindPopup(popup_e2078527eec655dbdb42d87dd236d904)
+        ;
+
+        
+    
+    
+            circle_marker_ab23fdfe526984d3b6c9252e4a1b3372.bindTooltip(
+                `<div>
+                     Extreme | FRP: 305.66
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6c88a139acff58f2c80d418289333f76 = L.circleMarker(
+                [8.94994, -12.13902],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.691375035056305, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_ff4e8e815b93cef344a57d926a3033d9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_62cf2748d567632be0238af1b322e1c7 = $(`<div id="html_62cf2748d567632be0238af1b322e1c7" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 302.16<br>     <b>Brightness TI4:</b> 345.65<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 8.9499, -12.1390     </div>`)[0];
+                popup_ff4e8e815b93cef344a57d926a3033d9.setContent(html_62cf2748d567632be0238af1b322e1c7);
+            
+        
+
+        circle_marker_6c88a139acff58f2c80d418289333f76.bindPopup(popup_ff4e8e815b93cef344a57d926a3033d9)
+        ;
+
+        
+    
+    
+            circle_marker_6c88a139acff58f2c80d418289333f76.bindTooltip(
+                `<div>
+                     Extreme | FRP: 302.16
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5692b170ed6cb73839790a690b4830ad = L.circleMarker(
+                [19.40898, -155.29254],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.531119504496465, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_c00c154ddd2c6204044fe7199d8b6c3a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bb510c8cf4045c4e51b78de534c2d31b = $(`<div id="html_bb510c8cf4045c4e51b78de534c2d31b" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 291.12<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.4090, -155.2925     </div>`)[0];
+                popup_c00c154ddd2c6204044fe7199d8b6c3a.setContent(html_bb510c8cf4045c4e51b78de534c2d31b);
+            
+        
+
+        circle_marker_5692b170ed6cb73839790a690b4830ad.bindPopup(popup_c00c154ddd2c6204044fe7199d8b6c3a)
+        ;
+
+        
+    
+    
+            circle_marker_5692b170ed6cb73839790a690b4830ad.bindTooltip(
+                `<div>
+                     Extreme | FRP: 291.12
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_16654745fc6b6b2bf7b56399f7e523c5 = L.circleMarker(
+                [19.40991, -155.29672],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.531119504496465, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_a67a08fa3582e8a1a181005bad93e293 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a1965263a8937eaa60a432c6dac508c5 = $(`<div id="html_a1965263a8937eaa60a432c6dac508c5" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 291.12<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.4099, -155.2967     </div>`)[0];
+                popup_a67a08fa3582e8a1a181005bad93e293.setContent(html_a1965263a8937eaa60a432c6dac508c5);
+            
+        
+
+        circle_marker_16654745fc6b6b2bf7b56399f7e523c5.bindPopup(popup_a67a08fa3582e8a1a181005bad93e293)
+        ;
+
+        
+    
+    
+            circle_marker_16654745fc6b6b2bf7b56399f7e523c5.bindTooltip(
+                `<div>
+                     Extreme | FRP: 291.12
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f37a4d970199397d7cca5b5575c8aeab = L.circleMarker(
+                [19.41456, -155.29152],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.531119504496465, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_93ded66126b0caf426cf6458a5984f92 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_580624a314049784a6546730a619d0eb = $(`<div id="html_580624a314049784a6546730a619d0eb" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 291.12<br>     <b>Brightness TI4:</b> 332.64<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.4146, -155.2915     </div>`)[0];
+                popup_93ded66126b0caf426cf6458a5984f92.setContent(html_580624a314049784a6546730a619d0eb);
+            
+        
+
+        circle_marker_f37a4d970199397d7cca5b5575c8aeab.bindPopup(popup_93ded66126b0caf426cf6458a5984f92)
+        ;
+
+        
+    
+    
+            circle_marker_f37a4d970199397d7cca5b5575c8aeab.bindTooltip(
+                `<div>
+                     Extreme | FRP: 291.12
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_932600c164cd035eb385766256190c40 = L.circleMarker(
+                [19.41549, -155.2957],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.531119504496465, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_d422a72e2aa772162df9c93c0dc1a36a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0cf5f5605a29679c9f2f60dc7f94500e = $(`<div id="html_0cf5f5605a29679c9f2f60dc7f94500e" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 291.12<br>     <b>Brightness TI4:</b> 314.08<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.4155, -155.2957     </div>`)[0];
+                popup_d422a72e2aa772162df9c93c0dc1a36a.setContent(html_0cf5f5605a29679c9f2f60dc7f94500e);
+            
+        
+
+        circle_marker_932600c164cd035eb385766256190c40.bindPopup(popup_d422a72e2aa772162df9c93c0dc1a36a)
+        ;
+
+        
+    
+    
+            circle_marker_932600c164cd035eb385766256190c40.bindTooltip(
+                `<div>
+                     Extreme | FRP: 291.12
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_246a803f3f43b83746cbed9f4473e8e3 = L.circleMarker(
+                [13.7325, 106.20517],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.524670081592602, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_91bfe78d8e09f2aa57fef2b5c5d68960 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_18744aea44cd60352f3d32e448a66ceb = $(`<div id="html_18744aea44cd60352f3d32e448a66ceb" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:01:00<br>     <b>FRP:</b> 290.68<br>     <b>Brightness TI4:</b> 355.61<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 13.7325, 106.2052     </div>`)[0];
+                popup_91bfe78d8e09f2aa57fef2b5c5d68960.setContent(html_18744aea44cd60352f3d32e448a66ceb);
+            
+        
+
+        circle_marker_246a803f3f43b83746cbed9f4473e8e3.bindPopup(popup_91bfe78d8e09f2aa57fef2b5c5d68960)
+        ;
+
+        
+    
+    
+            circle_marker_246a803f3f43b83746cbed9f4473e8e3.bindTooltip(
+                `<div>
+                     Extreme | FRP: 290.68
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66dbab0b4d9cc9a4a32a8fedd03dad63 = L.circleMarker(
+                [19.4064, -155.27466],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.288697123191316, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_408d4739660a86484f0a165830c6d773 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_efab59f53a369a3635f24ed733f17d93 = $(`<div id="html_efab59f53a369a3635f24ed733f17d93" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 274.81<br>     <b>Brightness TI4:</b> 349.27<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.4064, -155.2747     </div>`)[0];
+                popup_408d4739660a86484f0a165830c6d773.setContent(html_efab59f53a369a3635f24ed733f17d93);
+            
+        
+
+        circle_marker_66dbab0b4d9cc9a4a32a8fedd03dad63.bindPopup(popup_408d4739660a86484f0a165830c6d773)
+        ;
+
+        
+    
+    
+            circle_marker_66dbab0b4d9cc9a4a32a8fedd03dad63.bindTooltip(
+                `<div>
+                     Extreme | FRP: 274.81
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_85873595c8e2a705d7297cd202bf9c7e = L.circleMarker(
+                [19.40091, -155.27614],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.288697123191316, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_322ec50b039ed54f7caa19eaa23f4af2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d706efd61abc3fe02ba91b74932ac972 = $(`<div id="html_d706efd61abc3fe02ba91b74932ac972" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 274.81<br>     <b>Brightness TI4:</b> 354.78<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.4009, -155.2761     </div>`)[0];
+                popup_322ec50b039ed54f7caa19eaa23f4af2.setContent(html_d706efd61abc3fe02ba91b74932ac972);
+            
+        
+
+        circle_marker_85873595c8e2a705d7297cd202bf9c7e.bindPopup(popup_322ec50b039ed54f7caa19eaa23f4af2)
+        ;
+
+        
+    
+    
+            circle_marker_85873595c8e2a705d7297cd202bf9c7e.bindTooltip(
+                `<div>
+                     Extreme | FRP: 274.81
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_88da51dd15a058db4fe9fac44c4d2ab6 = L.circleMarker(
+                [19.39791, -155.29504],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.128806800508917, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_8d4bde00ee38942ea29bcdef3cbea37a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0ad648e5c7eb7a53e0343f1da3238b79 = $(`<div id="html_0ad648e5c7eb7a53e0343f1da3238b79" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 264.31<br>     <b>Brightness TI4:</b> 320.78<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.3979, -155.2950     </div>`)[0];
+                popup_8d4bde00ee38942ea29bcdef3cbea37a.setContent(html_0ad648e5c7eb7a53e0343f1da3238b79);
+            
+        
+
+        circle_marker_88da51dd15a058db4fe9fac44c4d2ab6.bindPopup(popup_8d4bde00ee38942ea29bcdef3cbea37a)
+        ;
+
+        
+    
+    
+            circle_marker_88da51dd15a058db4fe9fac44c4d2ab6.bindTooltip(
+                `<div>
+                     Extreme | FRP: 264.31
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_210030b469dd6c5416cacce82a980ca2 = L.circleMarker(
+                [19.40343, -155.29372],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.128806800508917, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_6fe6ebfdd2de1d670b66f1f565cafa50 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_78fc4cd6cb175c39a4acad6fd8772930 = $(`<div id="html_78fc4cd6cb175c39a4acad6fd8772930" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 264.31<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.4034, -155.2937     </div>`)[0];
+                popup_6fe6ebfdd2de1d670b66f1f565cafa50.setContent(html_78fc4cd6cb175c39a4acad6fd8772930);
+            
+        
+
+        circle_marker_210030b469dd6c5416cacce82a980ca2.bindPopup(popup_6fe6ebfdd2de1d670b66f1f565cafa50)
+        ;
+
+        
+    
+    
+            circle_marker_210030b469dd6c5416cacce82a980ca2.bindTooltip(
+                `<div>
+                     Extreme | FRP: 264.31
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d6ec6a96c58f4b8fbec85f366d458c8a = L.circleMarker(
+                [19.40434, -155.29782],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.128806800508917, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_13e3ac05333d00a5ad107ee7d4fe99bb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_56fe0134c8afa541709ae83aea2d5a45 = $(`<div id="html_56fe0134c8afa541709ae83aea2d5a45" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 264.31<br>     <b>Brightness TI4:</b> 354.52<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.4043, -155.2978     </div>`)[0];
+                popup_13e3ac05333d00a5ad107ee7d4fe99bb.setContent(html_56fe0134c8afa541709ae83aea2d5a45);
+            
+        
+
+        circle_marker_d6ec6a96c58f4b8fbec85f366d458c8a.bindPopup(popup_13e3ac05333d00a5ad107ee7d4fe99bb)
+        ;
+
+        
+    
+    
+            circle_marker_d6ec6a96c58f4b8fbec85f366d458c8a.bindTooltip(
+                `<div>
+                     Extreme | FRP: 264.31
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f6f673439367996982b7299400be505e = L.circleMarker(
+                [19.39879, -155.299],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.128806800508917, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_16f79661e90ad2930d0828467b950802 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_097a3c8dc4f9861699883ea4e96a2b8c = $(`<div id="html_097a3c8dc4f9861699883ea4e96a2b8c" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 264.31<br>     <b>Brightness TI4:</b> 308.21<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.3988, -155.2990     </div>`)[0];
+                popup_16f79661e90ad2930d0828467b950802.setContent(html_097a3c8dc4f9861699883ea4e96a2b8c);
+            
+        
+
+        circle_marker_f6f673439367996982b7299400be505e.bindPopup(popup_16f79661e90ad2930d0828467b950802)
+        ;
+
+        
+    
+    
+            circle_marker_f6f673439367996982b7299400be505e.bindTooltip(
+                `<div>
+                     Extreme | FRP: 264.31
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b30f0647a40ca122f2e2dc34f97fa633 = L.circleMarker(
+                [-17.76439, 124.10274],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.067837380611982, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_de701859ecc6e669595de27c6004721f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ab0cd919c3992f099145bc0313cbd778 = $(`<div id="html_ab0cd919c3992f099145bc0313cbd778" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:12:00<br>     <b>FRP:</b> 260.36<br>     <b>Brightness TI4:</b> 341.49<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -17.7644, 124.1027     </div>`)[0];
+                popup_de701859ecc6e669595de27c6004721f.setContent(html_ab0cd919c3992f099145bc0313cbd778);
+            
+        
+
+        circle_marker_b30f0647a40ca122f2e2dc34f97fa633.bindPopup(popup_de701859ecc6e669595de27c6004721f)
+        ;
+
+        
+    
+    
+            circle_marker_b30f0647a40ca122f2e2dc34f97fa633.bindTooltip(
+                `<div>
+                     Extreme | FRP: 260.36
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60dcc0ab4d48384ab45f09879dd76516 = L.circleMarker(
+                [9.18632, -12.79917],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.002499609497024, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_61d83a95404d65623c0e99a568443ec4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3eb70c22e94c2f8563347e9a93142356 = $(`<div id="html_3eb70c22e94c2f8563347e9a93142356" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 256.16<br>     <b>Brightness TI4:</b> 353.06<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.1863, -12.7992     </div>`)[0];
+                popup_61d83a95404d65623c0e99a568443ec4.setContent(html_3eb70c22e94c2f8563347e9a93142356);
+            
+        
+
+        circle_marker_60dcc0ab4d48384ab45f09879dd76516.bindPopup(popup_61d83a95404d65623c0e99a568443ec4)
+        ;
+
+        
+    
+    
+            circle_marker_60dcc0ab4d48384ab45f09879dd76516.bindTooltip(
+                `<div>
+                     Extreme | FRP: 256.16
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bbd2994e86f25fa55370474280ce7b05 = L.circleMarker(
+                [9.19117, -12.79998],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.002499609497024, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_44bcf15ab47067a63a0fab9fa7e9e4dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f292ee20fed70ba3bffbbfc93589bcc7 = $(`<div id="html_f292ee20fed70ba3bffbbfc93589bcc7" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 256.16<br>     <b>Brightness TI4:</b> 336.39<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.1912, -12.8000     </div>`)[0];
+                popup_44bcf15ab47067a63a0fab9fa7e9e4dd.setContent(html_f292ee20fed70ba3bffbbfc93589bcc7);
+            
+        
+
+        circle_marker_bbd2994e86f25fa55370474280ce7b05.bindPopup(popup_44bcf15ab47067a63a0fab9fa7e9e4dd)
+        ;
+
+        
+    
+    
+            circle_marker_bbd2994e86f25fa55370474280ce7b05.bindTooltip(
+                `<div>
+                     Extreme | FRP: 256.16
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cc6c0ece20f5aec2e7e295cfecb9e743 = L.circleMarker(
+                [9.30234, -12.81131],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.914701510480354, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_7914c529f26aa94175249b2eec02cdf2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_632b76d4237c58fd2357c829e1b24a99 = $(`<div id="html_632b76d4237c58fd2357c829e1b24a99" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 250.57<br>     <b>Brightness TI4:</b> 352.63<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.3023, -12.8113     </div>`)[0];
+                popup_7914c529f26aa94175249b2eec02cdf2.setContent(html_632b76d4237c58fd2357c829e1b24a99);
+            
+        
+
+        circle_marker_cc6c0ece20f5aec2e7e295cfecb9e743.bindPopup(popup_7914c529f26aa94175249b2eec02cdf2)
+        ;
+
+        
+    
+    
+            circle_marker_cc6c0ece20f5aec2e7e295cfecb9e743.bindTooltip(
+                `<div>
+                     Extreme | FRP: 250.57
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ed3e563d6903e84dc6efb6e20b2133da = L.circleMarker(
+                [9.30812, -12.8068],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.914701510480354, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_197bd1ba7c7ed6734e2d306e7d81df3f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4aaf9101c1e1b4d634c791119a036421 = $(`<div id="html_4aaf9101c1e1b4d634c791119a036421" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 250.57<br>     <b>Brightness TI4:</b> 346.60<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.3081, -12.8068     </div>`)[0];
+                popup_197bd1ba7c7ed6734e2d306e7d81df3f.setContent(html_4aaf9101c1e1b4d634c791119a036421);
+            
+        
+
+        circle_marker_ed3e563d6903e84dc6efb6e20b2133da.bindPopup(popup_197bd1ba7c7ed6734e2d306e7d81df3f)
+        ;
+
+        
+    
+    
+            circle_marker_ed3e563d6903e84dc6efb6e20b2133da.bindTooltip(
+                `<div>
+                     Extreme | FRP: 250.57
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7b333c7e2fdd81d01d90aefa36925212 = L.circleMarker(
+                [9.26567, -12.82125],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.769813382572325, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_16beb99cc36dff931bff2b34a51eab03 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3d7b2653656be92dccd730dd244574c8 = $(`<div id="html_3d7b2653656be92dccd730dd244574c8" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 241.48<br>     <b>Brightness TI4:</b> 351.17<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.2657, -12.8212     </div>`)[0];
+                popup_16beb99cc36dff931bff2b34a51eab03.setContent(html_3d7b2653656be92dccd730dd244574c8);
+            
+        
+
+        circle_marker_7b333c7e2fdd81d01d90aefa36925212.bindPopup(popup_16beb99cc36dff931bff2b34a51eab03)
+        ;
+
+        
+    
+    
+            circle_marker_7b333c7e2fdd81d01d90aefa36925212.bindTooltip(
+                `<div>
+                     Extreme | FRP: 241.48
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4d008251f53280c727133a2ed26d6090 = L.circleMarker(
+                [9.22962, -12.63751],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.744029958619738, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_221270e3bc717a1dfbec6c9b69d1a9f8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_56ed30a33f1247dbab2394bc08dcaafb = $(`<div id="html_56ed30a33f1247dbab2394bc08dcaafb" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 239.88<br>     <b>Brightness TI4:</b> 351.64<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.2296, -12.6375     </div>`)[0];
+                popup_221270e3bc717a1dfbec6c9b69d1a9f8.setContent(html_56ed30a33f1247dbab2394bc08dcaafb);
+            
+        
+
+        circle_marker_4d008251f53280c727133a2ed26d6090.bindPopup(popup_221270e3bc717a1dfbec6c9b69d1a9f8)
+        ;
+
+        
+    
+    
+            circle_marker_4d008251f53280c727133a2ed26d6090.bindTooltip(
+                `<div>
+                     Extreme | FRP: 239.88
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc45b1e105ae787cd4ceabb436989cb2 = L.circleMarker(
+                [-37.10138, 149.19157],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.707950440940834, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_7eaffdcc1e941a12003f9e7cdadfe8c7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f81bc727498e8065f19a7105bdea00b2 = $(`<div id="html_f81bc727498e8065f19a7105bdea00b2" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:06:00<br>     <b>FRP:</b> 237.65<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -37.1014, 149.1916     </div>`)[0];
+                popup_7eaffdcc1e941a12003f9e7cdadfe8c7.setContent(html_f81bc727498e8065f19a7105bdea00b2);
+            
+        
+
+        circle_marker_fc45b1e105ae787cd4ceabb436989cb2.bindPopup(popup_7eaffdcc1e941a12003f9e7cdadfe8c7)
+        ;
+
+        
+    
+    
+            circle_marker_fc45b1e105ae787cd4ceabb436989cb2.bindTooltip(
+                `<div>
+                     Extreme | FRP: 237.65
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_221e953826bd48ccfd4c2e4da6760685 = L.circleMarker(
+                [20.55718, 100.35472],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.707626093681505, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_3615182c9256719c30ffab9c62418ebe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5304e2c855148ce371f2465717622c27 = $(`<div id="html_5304e2c855148ce371f2465717622c27" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:03:00<br>     <b>FRP:</b> 237.63<br>     <b>Brightness TI4:</b> 350.99<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 20.5572, 100.3547     </div>`)[0];
+                popup_3615182c9256719c30ffab9c62418ebe.setContent(html_5304e2c855148ce371f2465717622c27);
+            
+        
+
+        circle_marker_221e953826bd48ccfd4c2e4da6760685.bindPopup(popup_3615182c9256719c30ffab9c62418ebe)
+        ;
+
+        
+    
+    
+            circle_marker_221e953826bd48ccfd4c2e4da6760685.bindTooltip(
+                `<div>
+                     Extreme | FRP: 237.63
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1b86b83257d13a3a95a4e574e4d949d9 = L.circleMarker(
+                [-41.20037, 147.75975],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.66175567347328, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_d3d620b5f4828194d6387605face99e6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9a251a5e37648ca749357f6f4771f133 = $(`<div id="html_9a251a5e37648ca749357f6f4771f133" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 03:23:00<br>     <b>FRP:</b> 234.81<br>     <b>Brightness TI4:</b> 352.05<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -41.2004, 147.7597     </div>`)[0];
+                popup_d3d620b5f4828194d6387605face99e6.setContent(html_9a251a5e37648ca749357f6f4771f133);
+            
+        
+
+        circle_marker_1b86b83257d13a3a95a4e574e4d949d9.bindPopup(popup_d3d620b5f4828194d6387605face99e6)
+        ;
+
+        
+    
+    
+            circle_marker_1b86b83257d13a3a95a4e574e4d949d9.bindTooltip(
+                `<div>
+                     Extreme | FRP: 234.81
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_75ab9aba4bafb2511ec1413ff2a415d6 = L.circleMarker(
+                [10.08755, -13.42107],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.502832798350234, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_824d3f1a898b3fe3e5e7e4e2feeba101 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4213935728539a809147089c90d570d4 = $(`<div id="html_4213935728539a809147089c90d570d4" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 225.17<br>     <b>Brightness TI4:</b> 338.33<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.0876, -13.4211     </div>`)[0];
+                popup_824d3f1a898b3fe3e5e7e4e2feeba101.setContent(html_4213935728539a809147089c90d570d4);
+            
+        
+
+        circle_marker_75ab9aba4bafb2511ec1413ff2a415d6.bindPopup(popup_824d3f1a898b3fe3e5e7e4e2feeba101)
+        ;
+
+        
+    
+    
+            circle_marker_75ab9aba4bafb2511ec1413ff2a415d6.bindTooltip(
+                `<div>
+                     Extreme | FRP: 225.17
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_67bf7d5af61d3377614c5022cf0cb3b0 = L.circleMarker(
+                [9.65639, -13.13421],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.19218325684211, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_546bb7c5088536164e6c005221fe6092 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d33301fcc3de2d3008718c36bad5692 = $(`<div id="html_4d33301fcc3de2d3008718c36bad5692" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 206.91<br>     <b>Brightness TI4:</b> 330.92<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.6564, -13.1342     </div>`)[0];
+                popup_546bb7c5088536164e6c005221fe6092.setContent(html_4d33301fcc3de2d3008718c36bad5692);
+            
+        
+
+        circle_marker_67bf7d5af61d3377614c5022cf0cb3b0.bindPopup(popup_546bb7c5088536164e6c005221fe6092)
+        ;
+
+        
+    
+    
+            circle_marker_67bf7d5af61d3377614c5022cf0cb3b0.bindTooltip(
+                `<div>
+                     Extreme | FRP: 206.91
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_12c072aed551f240983b024242352e1a = L.circleMarker(
+                [9.96091, -13.04391],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.115476090888087, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_dc12f924dcfa21d89dc1e42960ca54e5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1e0765d8b40e784de941870ba003f996 = $(`<div id="html_1e0765d8b40e784de941870ba003f996" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 202.52<br>     <b>Brightness TI4:</b> 346.22<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.9609, -13.0439     </div>`)[0];
+                popup_dc12f924dcfa21d89dc1e42960ca54e5.setContent(html_1e0765d8b40e784de941870ba003f996);
+            
+        
+
+        circle_marker_12c072aed551f240983b024242352e1a.bindPopup(popup_dc12f924dcfa21d89dc1e42960ca54e5)
+        ;
+
+        
+    
+    
+            circle_marker_12c072aed551f240983b024242352e1a.bindTooltip(
+                `<div>
+                     Extreme | FRP: 202.52
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1553785c5f98a3e1208ec35691560bfc = L.circleMarker(
+                [10.09352, -12.20824],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.103872183534836, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_4abae26f3874af27955353c60ecd59dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_362a9d86d0db4f0a6aaf0ea36dcfeea0 = $(`<div id="html_362a9d86d0db4f0a6aaf0ea36dcfeea0" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 201.86<br>     <b>Brightness TI4:</b> 348.10<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.0935, -12.2082     </div>`)[0];
+                popup_4abae26f3874af27955353c60ecd59dc.setContent(html_362a9d86d0db4f0a6aaf0ea36dcfeea0);
+            
+        
+
+        circle_marker_1553785c5f98a3e1208ec35691560bfc.bindPopup(popup_4abae26f3874af27955353c60ecd59dc)
+        ;
+
+        
+    
+    
+            circle_marker_1553785c5f98a3e1208ec35691560bfc.bindTooltip(
+                `<div>
+                     Extreme | FRP: 201.86
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e5cb32d6d4d6b12753f5758f1c7adb3f = L.circleMarker(
+                [9.45679, -12.76981],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.10105625945887, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_7b783b1a23be6423e7f6dfb9b2c642a6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_120a1478aebbeaffcd70a8b48b92be70 = $(`<div id="html_120a1478aebbeaffcd70a8b48b92be70" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 201.70<br>     <b>Brightness TI4:</b> 341.52<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.4568, -12.7698     </div>`)[0];
+                popup_7b783b1a23be6423e7f6dfb9b2c642a6.setContent(html_120a1478aebbeaffcd70a8b48b92be70);
+            
+        
+
+        circle_marker_e5cb32d6d4d6b12753f5758f1c7adb3f.bindPopup(popup_7b783b1a23be6423e7f6dfb9b2c642a6)
+        ;
+
+        
+    
+    
+            circle_marker_e5cb32d6d4d6b12753f5758f1c7adb3f.bindTooltip(
+                `<div>
+                     Extreme | FRP: 201.70
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_afaae3452f2f642aed58d56f8b190d21 = L.circleMarker(
+                [-37.0936, 149.1898],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.033669028323695, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_124e9a5fc2a4ab31dda29e5ce12d96d1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_567d7cad171df3473267dd867dc9a0b7 = $(`<div id="html_567d7cad171df3473267dd867dc9a0b7" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 03:25:00<br>     <b>FRP:</b> 197.89<br>     <b>Brightness TI4:</b> 348.37<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -37.0936, 149.1898     </div>`)[0];
+                popup_124e9a5fc2a4ab31dda29e5ce12d96d1.setContent(html_567d7cad171df3473267dd867dc9a0b7);
+            
+        
+
+        circle_marker_afaae3452f2f642aed58d56f8b190d21.bindPopup(popup_124e9a5fc2a4ab31dda29e5ce12d96d1)
+        ;
+
+        
+    
+    
+            circle_marker_afaae3452f2f642aed58d56f8b190d21.bindTooltip(
+                `<div>
+                     Extreme | FRP: 197.89
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80f8c43608243b531d201f79eafcc7c2 = L.circleMarker(
+                [40.65226, 128.50279],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.996248994997249, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_1bd1834ddbe7f4bd001c2b7c234ec9ab = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4ec6f3212d2cff04934652492d285e34 = $(`<div id="html_4ec6f3212d2cff04934652492d285e34" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:27:00<br>     <b>FRP:</b> 195.79<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 40.6523, 128.5028     </div>`)[0];
+                popup_1bd1834ddbe7f4bd001c2b7c234ec9ab.setContent(html_4ec6f3212d2cff04934652492d285e34);
+            
+        
+
+        circle_marker_80f8c43608243b531d201f79eafcc7c2.bindPopup(popup_1bd1834ddbe7f4bd001c2b7c234ec9ab)
+        ;
+
+        
+    
+    
+            circle_marker_80f8c43608243b531d201f79eafcc7c2.bindTooltip(
+                `<div>
+                     Extreme | FRP: 195.79
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_249c3a1120a6e4375c04973ba71105cb = L.circleMarker(
+                [9.02729, -11.80496],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.992317212483998, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_f8dc8718d216e332ea7089da5d948878 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e6c5b50631a98d9ec66a921362730f54 = $(`<div id="html_e6c5b50631a98d9ec66a921362730f54" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 195.57<br>     <b>Brightness TI4:</b> 347.10<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.0273, -11.8050     </div>`)[0];
+                popup_f8dc8718d216e332ea7089da5d948878.setContent(html_e6c5b50631a98d9ec66a921362730f54);
+            
+        
+
+        circle_marker_249c3a1120a6e4375c04973ba71105cb.bindPopup(popup_f8dc8718d216e332ea7089da5d948878)
+        ;
+
+        
+    
+    
+            circle_marker_249c3a1120a6e4375c04973ba71105cb.bindTooltip(
+                `<div>
+                     Extreme | FRP: 195.57
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f16bd4a4e03a651677fe2fb8238ab361 = L.circleMarker(
+                [9.79545, -12.93036],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.982478070141001, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_88199f77f63302dce17471b61b9cc827 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ae7aa84b8dcc972f2615688194690423 = $(`<div id="html_ae7aa84b8dcc972f2615688194690423" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 195.02<br>     <b>Brightness TI4:</b> 330.35<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.7955, -12.9304     </div>`)[0];
+                popup_88199f77f63302dce17471b61b9cc827.setContent(html_ae7aa84b8dcc972f2615688194690423);
+            
+        
+
+        circle_marker_f16bd4a4e03a651677fe2fb8238ab361.bindPopup(popup_88199f77f63302dce17471b61b9cc827)
+        ;
+
+        
+    
+    
+            circle_marker_f16bd4a4e03a651677fe2fb8238ab361.bindTooltip(
+                `<div>
+                     Extreme | FRP: 195.02
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8291131e33fc79e215584f921d6ad7bc = L.circleMarker(
+                [9.79064, -12.92941],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.982478070141001, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_543e659bcf4054602c4188bc6e1c8cec = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2ca4582577f0543d65ebab13a8dac10a = $(`<div id="html_2ca4582577f0543d65ebab13a8dac10a" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 195.02<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.7906, -12.9294     </div>`)[0];
+                popup_543e659bcf4054602c4188bc6e1c8cec.setContent(html_2ca4582577f0543d65ebab13a8dac10a);
+            
+        
+
+        circle_marker_8291131e33fc79e215584f921d6ad7bc.bindPopup(popup_543e659bcf4054602c4188bc6e1c8cec)
+        ;
+
+        
+    
+    
+            circle_marker_8291131e33fc79e215584f921d6ad7bc.bindTooltip(
+                `<div>
+                     Extreme | FRP: 195.02
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee2cfa6c4f22d9d4601558abf5a09235 = L.circleMarker(
+                [9.79161, -12.92397],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.982478070141001, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_575e7d1a196d21d76d94312f8cb61d32 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f2bf4535391ca854edbb04c64f578e67 = $(`<div id="html_f2bf4535391ca854edbb04c64f578e67" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 195.02<br>     <b>Brightness TI4:</b> 338.55<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.7916, -12.9240     </div>`)[0];
+                popup_575e7d1a196d21d76d94312f8cb61d32.setContent(html_f2bf4535391ca854edbb04c64f578e67);
+            
+        
+
+        circle_marker_ee2cfa6c4f22d9d4601558abf5a09235.bindPopup(popup_575e7d1a196d21d76d94312f8cb61d32)
+        ;
+
+        
+    
+    
+            circle_marker_ee2cfa6c4f22d9d4601558abf5a09235.bindTooltip(
+                `<div>
+                     Extreme | FRP: 195.02
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c8a1546a75f70e540e4d51b92330647d = L.circleMarker(
+                [40.59097, 128.91829],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.982299048307798, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_a729d017af48a01e3436b93384fefa37 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_42dc70b11f641c4eed986a0efc1b7e36 = $(`<div id="html_42dc70b11f641c4eed986a0efc1b7e36" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:27:00<br>     <b>FRP:</b> 195.01<br>     <b>Brightness TI4:</b> 344.35<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 40.5910, 128.9183     </div>`)[0];
+                popup_a729d017af48a01e3436b93384fefa37.setContent(html_42dc70b11f641c4eed986a0efc1b7e36);
+            
+        
+
+        circle_marker_c8a1546a75f70e540e4d51b92330647d.bindPopup(popup_a729d017af48a01e3436b93384fefa37)
+        ;
+
+        
+    
+    
+            circle_marker_c8a1546a75f70e540e4d51b92330647d.bindTooltip(
+                `<div>
+                     Extreme | FRP: 195.01
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e6280173c9fdcfe7258a6ca7eec04cf1 = L.circleMarker(
+                [20.5411, 100.44193],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.981224820903563, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_e69fcb1a0f312e9a9ba9ff6ee6a6a1bb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e7ec2913a039f5b8483736d83aee655b = $(`<div id="html_e7ec2913a039f5b8483736d83aee655b" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:03:00<br>     <b>FRP:</b> 194.95<br>     <b>Brightness TI4:</b> 346.56<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 20.5411, 100.4419     </div>`)[0];
+                popup_e69fcb1a0f312e9a9ba9ff6ee6a6a1bb.setContent(html_e7ec2913a039f5b8483736d83aee655b);
+            
+        
+
+        circle_marker_e6280173c9fdcfe7258a6ca7eec04cf1.bindPopup(popup_e69fcb1a0f312e9a9ba9ff6ee6a6a1bb)
+        ;
+
+        
+    
+    
+            circle_marker_e6280173c9fdcfe7258a6ca7eec04cf1.bindTooltip(
+                `<div>
+                     Extreme | FRP: 194.95
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_12a626ed5ed05456ccc5575a342bdbdf = L.circleMarker(
+                [9.10822, -11.93156],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.964014646739336, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_583729a8d0527b6d35a2fe93de57f1e2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7b43f9982f7742f2ec89820885e249fa = $(`<div id="html_7b43f9982f7742f2ec89820885e249fa" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 193.99<br>     <b>Brightness TI4:</b> 346.35<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.1082, -11.9316     </div>`)[0];
+                popup_583729a8d0527b6d35a2fe93de57f1e2.setContent(html_7b43f9982f7742f2ec89820885e249fa);
+            
+        
+
+        circle_marker_12a626ed5ed05456ccc5575a342bdbdf.bindPopup(popup_583729a8d0527b6d35a2fe93de57f1e2)
+        ;
+
+        
+    
+    
+            circle_marker_12a626ed5ed05456ccc5575a342bdbdf.bindTooltip(
+                `<div>
+                     Extreme | FRP: 193.99
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f4c957c6e7af32f251630cd37d79ac2e = L.circleMarker(
+                [25.04427, 94.95074],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.89673835954359, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_fd33ccc47fdbfa81a5907f9e946c2078 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c36d97362b96deceb5ce08becb453f75 = $(`<div id="html_c36d97362b96deceb5ce08becb453f75" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:05:00<br>     <b>FRP:</b> 190.26<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 25.0443, 94.9507     </div>`)[0];
+                popup_fd33ccc47fdbfa81a5907f9e946c2078.setContent(html_c36d97362b96deceb5ce08becb453f75);
+            
+        
+
+        circle_marker_f4c957c6e7af32f251630cd37d79ac2e.bindPopup(popup_fd33ccc47fdbfa81a5907f9e946c2078)
+        ;
+
+        
+    
+    
+            circle_marker_f4c957c6e7af32f251630cd37d79ac2e.bindTooltip(
+                `<div>
+                     Extreme | FRP: 190.26
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d0edb0308eacc0fe1ce24e00595d11c9 = L.circleMarker(
+                [25.04772, 94.95015],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.89673835954359, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_75f5b5cd02727f4221dda1158b2f68dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f4d0c936a69ae0b8f22aeb7b3f6ba96e = $(`<div id="html_f4d0c936a69ae0b8f22aeb7b3f6ba96e" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:05:00<br>     <b>FRP:</b> 190.26<br>     <b>Brightness TI4:</b> 336.68<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 25.0477, 94.9501     </div>`)[0];
+                popup_75f5b5cd02727f4221dda1158b2f68dd.setContent(html_f4d0c936a69ae0b8f22aeb7b3f6ba96e);
+            
+        
+
+        circle_marker_d0edb0308eacc0fe1ce24e00595d11c9.bindPopup(popup_75f5b5cd02727f4221dda1158b2f68dd)
+        ;
+
+        
+    
+    
+            circle_marker_d0edb0308eacc0fe1ce24e00595d11c9.bindTooltip(
+                `<div>
+                     Extreme | FRP: 190.26
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_05a8d73f1e3a3e311457617ab7575248 = L.circleMarker(
+                [9.41693, -12.92989],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.865857557508749, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_6abb4fe6d3e50bf058bf781a69463bfe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a317fd76122c156b2ea43e81303a3243 = $(`<div id="html_a317fd76122c156b2ea43e81303a3243" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 188.56<br>     <b>Brightness TI4:</b> 349.37<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.4169, -12.9299     </div>`)[0];
+                popup_6abb4fe6d3e50bf058bf781a69463bfe.setContent(html_a317fd76122c156b2ea43e81303a3243);
+            
+        
+
+        circle_marker_05a8d73f1e3a3e311457617ab7575248.bindPopup(popup_6abb4fe6d3e50bf058bf781a69463bfe)
+        ;
+
+        
+    
+    
+            circle_marker_05a8d73f1e3a3e311457617ab7575248.bindTooltip(
+                `<div>
+                     Extreme | FRP: 188.56
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ccb39bbd3bcc1a2151716c8fdb5d5d0 = L.circleMarker(
+                [40.57697, 128.90416],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.80202175827158, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_db9212ec66b2a472a0ceb7cdd2208055 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8f83c835d600057408b16f207f895568 = $(`<div id="html_8f83c835d600057408b16f207f895568" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 03:49:00<br>     <b>FRP:</b> 185.07<br>     <b>Brightness TI4:</b> 334.74<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 40.5770, 128.9042     </div>`)[0];
+                popup_db9212ec66b2a472a0ceb7cdd2208055.setContent(html_8f83c835d600057408b16f207f895568);
+            
+        
+
+        circle_marker_3ccb39bbd3bcc1a2151716c8fdb5d5d0.bindPopup(popup_db9212ec66b2a472a0ceb7cdd2208055)
+        ;
+
+        
+    
+    
+            circle_marker_3ccb39bbd3bcc1a2151716c8fdb5d5d0.bindTooltip(
+                `<div>
+                     Extreme | FRP: 185.07
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5e7ecd787084841fc7574dcb384460b8 = L.circleMarker(
+                [-33.85256, 121.01789],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.755553271198444, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_e0ada585969bf3cca891a080cc3e30ed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_819795e478594fbe36cc02de96aa6fec = $(`<div id="html_819795e478594fbe36cc02de96aa6fec" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:08:00<br>     <b>FRP:</b> 182.55<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -33.8526, 121.0179     </div>`)[0];
+                popup_e0ada585969bf3cca891a080cc3e30ed.setContent(html_819795e478594fbe36cc02de96aa6fec);
+            
+        
+
+        circle_marker_5e7ecd787084841fc7574dcb384460b8.bindPopup(popup_e0ada585969bf3cca891a080cc3e30ed)
+        ;
+
+        
+    
+    
+            circle_marker_5e7ecd787084841fc7574dcb384460b8.bindTooltip(
+                `<div>
+                     Extreme | FRP: 182.55
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f9acdd54249fd1a0881a45802c3a406 = L.circleMarker(
+                [-33.85284, 121.01359],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.755553271198444, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_f50972025d6d62f0db6c2fdc79a45cb4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1984856598728eac351320dda818b78f = $(`<div id="html_1984856598728eac351320dda818b78f" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:08:00<br>     <b>FRP:</b> 182.55<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -33.8528, 121.0136     </div>`)[0];
+                popup_f50972025d6d62f0db6c2fdc79a45cb4.setContent(html_1984856598728eac351320dda818b78f);
+            
+        
+
+        circle_marker_0f9acdd54249fd1a0881a45802c3a406.bindPopup(popup_f50972025d6d62f0db6c2fdc79a45cb4)
+        ;
+
+        
+    
+    
+            circle_marker_0f9acdd54249fd1a0881a45802c3a406.bindTooltip(
+                `<div>
+                     Extreme | FRP: 182.55
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f1d437a7ec6fd7d44e14e77b3238b8a4 = L.circleMarker(
+                [-33.8581, 121.01827],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.755553271198444, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_cd88d039261432476d0212a0aa95a82b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1f2295fd1b318a0b1e490ddff4a964b6 = $(`<div id="html_1f2295fd1b318a0b1e490ddff4a964b6" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:08:00<br>     <b>FRP:</b> 182.55<br>     <b>Brightness TI4:</b> 350.18<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -33.8581, 121.0183     </div>`)[0];
+                popup_cd88d039261432476d0212a0aa95a82b.setContent(html_1f2295fd1b318a0b1e490ddff4a964b6);
+            
+        
+
+        circle_marker_f1d437a7ec6fd7d44e14e77b3238b8a4.bindPopup(popup_cd88d039261432476d0212a0aa95a82b)
+        ;
+
+        
+    
+    
+            circle_marker_f1d437a7ec6fd7d44e14e77b3238b8a4.bindTooltip(
+                `<div>
+                     Extreme | FRP: 182.55
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_362ecbaa428cc38c346279429a61f6b5 = L.circleMarker(
+                [8.64928, -11.54628],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.75, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_3026233b7ed58c2acbb3c6173b0800c8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e78987b77ac796e1917c107d6a0290ed = $(`<div id="html_e78987b77ac796e1917c107d6a0290ed" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 182.25<br>     <b>Brightness TI4:</b> 341.78<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 8.6493, -11.5463     </div>`)[0];
+                popup_3026233b7ed58c2acbb3c6173b0800c8.setContent(html_e78987b77ac796e1917c107d6a0290ed);
+            
+        
+
+        circle_marker_362ecbaa428cc38c346279429a61f6b5.bindPopup(popup_3026233b7ed58c2acbb3c6173b0800c8)
+        ;
+
+        
+    
+    
+            circle_marker_362ecbaa428cc38c346279429a61f6b5.bindTooltip(
+                `<div>
+                     Extreme | FRP: 182.25
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5707b995ab705a501ff991a41341c32d = L.circleMarker(
+                [9.36898, -12.62467],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.684683986547157, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_438e716ea4560211e2cd59e19b10661d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_666da797dfa040da217cada841f2d76c = $(`<div id="html_666da797dfa040da217cada841f2d76c" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 178.74<br>     <b>Brightness TI4:</b> 338.88<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.3690, -12.6247     </div>`)[0];
+                popup_438e716ea4560211e2cd59e19b10661d.setContent(html_666da797dfa040da217cada841f2d76c);
+            
+        
+
+        circle_marker_5707b995ab705a501ff991a41341c32d.bindPopup(popup_438e716ea4560211e2cd59e19b10661d)
+        ;
+
+        
+    
+    
+            circle_marker_5707b995ab705a501ff991a41341c32d.bindTooltip(
+                `<div>
+                     Extreme | FRP: 178.74
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a663313af698e0af6f27c7658e493d41 = L.circleMarker(
+                [9.36993, -12.61946],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.684683986547157, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_763d676be6fe1fb4dc1273bcffc595c7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_88eea3f834545e127fd3ae96e8faea01 = $(`<div id="html_88eea3f834545e127fd3ae96e8faea01" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 178.74<br>     <b>Brightness TI4:</b> 347.41<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.3699, -12.6195     </div>`)[0];
+                popup_763d676be6fe1fb4dc1273bcffc595c7.setContent(html_88eea3f834545e127fd3ae96e8faea01);
+            
+        
+
+        circle_marker_a663313af698e0af6f27c7658e493d41.bindPopup(popup_763d676be6fe1fb4dc1273bcffc595c7)
+        ;
+
+        
+    
+    
+            circle_marker_a663313af698e0af6f27c7658e493d41.bindTooltip(
+                `<div>
+                     Extreme | FRP: 178.74
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c59647ea94d93179bb01218568137a93 = L.circleMarker(
+                [23.27689, 54.26139],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.602840297932397, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_8edb544e42dc2f2ecc2b44252b48c082 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_933211f99b8dc09c87cab6976926af16 = $(`<div id="html_933211f99b8dc09c87cab6976926af16" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 08:48:00<br>     <b>FRP:</b> 174.39<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 23.2769, 54.2614     </div>`)[0];
+                popup_8edb544e42dc2f2ecc2b44252b48c082.setContent(html_933211f99b8dc09c87cab6976926af16);
+            
+        
+
+        circle_marker_c59647ea94d93179bb01218568137a93.bindPopup(popup_8edb544e42dc2f2ecc2b44252b48c082)
+        ;
+
+        
+    
+    
+            circle_marker_c59647ea94d93179bb01218568137a93.bindTooltip(
+                `<div>
+                     Extreme | FRP: 174.39
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e0a1b3c5056964a01fa0f37c09a6f2ae = L.circleMarker(
+                [9.19602, -12.80077],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.581223290544091, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_3361c9d8054464e1b6fe0f010513f9b2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_73d3f43fa880181837abd2fa45cae8b4 = $(`<div id="html_73d3f43fa880181837abd2fa45cae8b4" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 173.25<br>     <b>Brightness TI4:</b> 351.11<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.1960, -12.8008     </div>`)[0];
+                popup_3361c9d8054464e1b6fe0f010513f9b2.setContent(html_73d3f43fa880181837abd2fa45cae8b4);
+            
+        
+
+        circle_marker_e0a1b3c5056964a01fa0f37c09a6f2ae.bindPopup(popup_3361c9d8054464e1b6fe0f010513f9b2)
+        ;
+
+        
+    
+    
+            circle_marker_e0a1b3c5056964a01fa0f37c09a6f2ae.bindTooltip(
+                `<div>
+                     Extreme | FRP: 173.25
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f5bc75d69a21d58458af618cb63cf71d = L.circleMarker(
+                [9.20086, -12.80162],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.581223290544091, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_f54cb4bcad69644f2ef27ad6dca2a112 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9849ea4ce9717d1943dab73ac34ca33f = $(`<div id="html_9849ea4ce9717d1943dab73ac34ca33f" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 173.25<br>     <b>Brightness TI4:</b> 332.27<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.2009, -12.8016     </div>`)[0];
+                popup_f54cb4bcad69644f2ef27ad6dca2a112.setContent(html_9849ea4ce9717d1943dab73ac34ca33f);
+            
+        
+
+        circle_marker_f5bc75d69a21d58458af618cb63cf71d.bindPopup(popup_f54cb4bcad69644f2ef27ad6dca2a112)
+        ;
+
+        
+    
+    
+            circle_marker_f5bc75d69a21d58458af618cb63cf71d.bindTooltip(
+                `<div>
+                     Extreme | FRP: 173.25
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b89b595d46b26b7cd63c0e13794425e4 = L.circleMarker(
+                [9.19991, -12.80705],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.581223290544091, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_b564fe5a938282c1b07795f3a058783f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2842ee4bf29b291cc458f69416c2e978 = $(`<div id="html_2842ee4bf29b291cc458f69416c2e978" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 173.25<br>     <b>Brightness TI4:</b> 349.27<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.1999, -12.8071     </div>`)[0];
+                popup_b564fe5a938282c1b07795f3a058783f.setContent(html_2842ee4bf29b291cc458f69416c2e978);
+            
+        
+
+        circle_marker_b89b595d46b26b7cd63c0e13794425e4.bindPopup(popup_b564fe5a938282c1b07795f3a058783f)
+        ;
+
+        
+    
+    
+            circle_marker_b89b595d46b26b7cd63c0e13794425e4.bindTooltip(
+                `<div>
+                     Extreme | FRP: 173.25
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cd554c9e0b3b2af20934e299fa599cc6 = L.circleMarker(
+                [9.33459, -12.89715],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.541215483379217, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_d78d257cebfd06c84af3ebd2e9dd633f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1961db52c386e7bbe1048abb51fb6b82 = $(`<div id="html_1961db52c386e7bbe1048abb51fb6b82" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 171.15<br>     <b>Brightness TI4:</b> 352.07<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.3346, -12.8971     </div>`)[0];
+                popup_d78d257cebfd06c84af3ebd2e9dd633f.setContent(html_1961db52c386e7bbe1048abb51fb6b82);
+            
+        
+
+        circle_marker_cd554c9e0b3b2af20934e299fa599cc6.bindPopup(popup_d78d257cebfd06c84af3ebd2e9dd633f)
+        ;
+
+        
+    
+    
+            circle_marker_cd554c9e0b3b2af20934e299fa599cc6.bindTooltip(
+                `<div>
+                     Extreme | FRP: 171.15
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70f22ed428dd7c2561a7017c38013482 = L.circleMarker(
+                [9.33848, -12.90339],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.541215483379217, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_7f47c92da2417731030273d021358320 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bb826e967d2cf2db5b9ee19231da1e08 = $(`<div id="html_bb826e967d2cf2db5b9ee19231da1e08" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 171.15<br>     <b>Brightness TI4:</b> 345.99<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.3385, -12.9034     </div>`)[0];
+                popup_7f47c92da2417731030273d021358320.setContent(html_bb826e967d2cf2db5b9ee19231da1e08);
+            
+        
+
+        circle_marker_70f22ed428dd7c2561a7017c38013482.bindPopup(popup_7f47c92da2417731030273d021358320)
+        ;
+
+        
+    
+    
+            circle_marker_70f22ed428dd7c2561a7017c38013482.bindTooltip(
+                `<div>
+                     Extreme | FRP: 171.15
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a5397e050ee4b3edbaa2bb96f0c2fbf4 = L.circleMarker(
+                [8.83031, -11.50945],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.537966044573801, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_ae72d127f36b5292e641b731491b9963 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9cab5058149f46b7615c65ef9192206f = $(`<div id="html_9cab5058149f46b7615c65ef9192206f" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 170.98<br>     <b>Brightness TI4:</b> 351.78<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 8.8303, -11.5094     </div>`)[0];
+                popup_ae72d127f36b5292e641b731491b9963.setContent(html_9cab5058149f46b7615c65ef9192206f);
+            
+        
+
+        circle_marker_a5397e050ee4b3edbaa2bb96f0c2fbf4.bindPopup(popup_ae72d127f36b5292e641b731491b9963)
+        ;
+
+        
+    
+    
+            circle_marker_a5397e050ee4b3edbaa2bb96f0c2fbf4.bindTooltip(
+                `<div>
+                     Extreme | FRP: 170.98
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c2298881de67567b5c88e99b093a936 = L.circleMarker(
+                [20.53562, 100.44012],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.529165337162171, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_e793d2fc901a9c052d0d1947ad8cc6b9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ad2f49104477a3810ecfa4947cbff836 = $(`<div id="html_ad2f49104477a3810ecfa4947cbff836" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:03:00<br>     <b>FRP:</b> 170.52<br>     <b>Brightness TI4:</b> 337.70<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 20.5356, 100.4401     </div>`)[0];
+                popup_e793d2fc901a9c052d0d1947ad8cc6b9.setContent(html_ad2f49104477a3810ecfa4947cbff836);
+            
+        
+
+        circle_marker_8c2298881de67567b5c88e99b093a936.bindPopup(popup_e793d2fc901a9c052d0d1947ad8cc6b9)
+        ;
+
+        
+    
+    
+            circle_marker_8c2298881de67567b5c88e99b093a936.bindTooltip(
+                `<div>
+                     Extreme | FRP: 170.52
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a5a3cc79a998aacaad8a9c412bc75402 = L.circleMarker(
+                [20.54001, 100.43934],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.529165337162171, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_8ef34100e8aa95d3a8db8175c69aeed8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_433a6a53ee4d67172556490d62c6c137 = $(`<div id="html_433a6a53ee4d67172556490d62c6c137" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:03:00<br>     <b>FRP:</b> 170.52<br>     <b>Brightness TI4:</b> 330.99<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 20.5400, 100.4393     </div>`)[0];
+                popup_8ef34100e8aa95d3a8db8175c69aeed8.setContent(html_433a6a53ee4d67172556490d62c6c137);
+            
+        
+
+        circle_marker_a5a3cc79a998aacaad8a9c412bc75402.bindPopup(popup_8ef34100e8aa95d3a8db8175c69aeed8)
+        ;
+
+        
+    
+    
+            circle_marker_a5a3cc79a998aacaad8a9c412bc75402.bindTooltip(
+                `<div>
+                     Extreme | FRP: 170.52
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dabc536f28f9c25fef9b5a51065be429 = L.circleMarker(
+                [20.5997, 100.37575],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.48613906727261, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_415fe444e5d413e7e3e8363bc5e6f611 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f85a4c73b04250a99330bc273e1dc6b8 = $(`<div id="html_f85a4c73b04250a99330bc273e1dc6b8" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:03:00<br>     <b>FRP:</b> 168.28<br>     <b>Brightness TI4:</b> 354.19<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 20.5997, 100.3757     </div>`)[0];
+                popup_415fe444e5d413e7e3e8363bc5e6f611.setContent(html_f85a4c73b04250a99330bc273e1dc6b8);
+            
+        
+
+        circle_marker_dabc536f28f9c25fef9b5a51065be429.bindPopup(popup_415fe444e5d413e7e3e8363bc5e6f611)
+        ;
+
+        
+    
+    
+            circle_marker_dabc536f28f9c25fef9b5a51065be429.bindTooltip(
+                `<div>
+                     Extreme | FRP: 168.28
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_44237c017ef7a4b9fdb44ab0c3c4b9f9 = L.circleMarker(
+                [10.78957, -13.16735],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.45, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_6b2572b4ad9591e627c5ec98e920c5a3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5df7cedcde414c2018b9ca3fdb94694a = $(`<div id="html_5df7cedcde414c2018b9ca3fdb94694a" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 166.41<br>     <b>Brightness TI4:</b> 338.94<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.7896, -13.1674     </div>`)[0];
+                popup_6b2572b4ad9591e627c5ec98e920c5a3.setContent(html_5df7cedcde414c2018b9ca3fdb94694a);
+            
+        
+
+        circle_marker_44237c017ef7a4b9fdb44ab0c3c4b9f9.bindPopup(popup_6b2572b4ad9591e627c5ec98e920c5a3)
+        ;
+
+        
+    
+    
+            circle_marker_44237c017ef7a4b9fdb44ab0c3c4b9f9.bindTooltip(
+                `<div>
+                     Extreme | FRP: 166.41
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9e40274bb6e27b8943208386be9b4f51 = L.circleMarker(
+                [19.41173, -155.27879],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.446898479113813, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_de4b4fd6366afb40aeebcb14240c6817 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_da453e08bcdd7d171e91faa55ed4edc7 = $(`<div id="html_da453e08bcdd7d171e91faa55ed4edc7" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 166.25<br>     <b>Brightness TI4:</b> 353.51<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.4117, -155.2788     </div>`)[0];
+                popup_de4b4fd6366afb40aeebcb14240c6817.setContent(html_da453e08bcdd7d171e91faa55ed4edc7);
+            
+        
+
+        circle_marker_9e40274bb6e27b8943208386be9b4f51.bindPopup(popup_de4b4fd6366afb40aeebcb14240c6817)
+        ;
+
+        
+    
+    
+            circle_marker_9e40274bb6e27b8943208386be9b4f51.bindTooltip(
+                `<div>
+                     Extreme | FRP: 166.25
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a625d2adefe37c26896bcf5b489d5063 = L.circleMarker(
+                [19.41085, -155.27483],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.446898479113813, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_b8157d8cdd0c4ee9028df52f7f155379 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cafdce2b9b14c9c6aa351b39ac9c8a12 = $(`<div id="html_cafdce2b9b14c9c6aa351b39ac9c8a12" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 166.25<br>     <b>Brightness TI4:</b> 327.49<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.4108, -155.2748     </div>`)[0];
+                popup_b8157d8cdd0c4ee9028df52f7f155379.setContent(html_cafdce2b9b14c9c6aa351b39ac9c8a12);
+            
+        
+
+        circle_marker_a625d2adefe37c26896bcf5b489d5063.bindPopup(popup_b8157d8cdd0c4ee9028df52f7f155379)
+        ;
+
+        
+    
+    
+            circle_marker_a625d2adefe37c26896bcf5b489d5063.bindTooltip(
+                `<div>
+                     Extreme | FRP: 166.25
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dfdb5caa11a5dc0918cf6af5525f21de = L.circleMarker(
+                [19.40533, -155.27615],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.446898479113813, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_65349168d6451b0b601523472d1f3c01 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d3b0db3462af1c2930a453a9877d1975 = $(`<div id="html_d3b0db3462af1c2930a453a9877d1975" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 12:49:00<br>     <b>FRP:</b> 166.25<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> N<br>     <b>Lat/Lon:</b> 19.4053, -155.2762     </div>`)[0];
+                popup_65349168d6451b0b601523472d1f3c01.setContent(html_d3b0db3462af1c2930a453a9877d1975);
+            
+        
+
+        circle_marker_dfdb5caa11a5dc0918cf6af5525f21de.bindPopup(popup_65349168d6451b0b601523472d1f3c01)
+        ;
+
+        
+    
+    
+            circle_marker_dfdb5caa11a5dc0918cf6af5525f21de.bindTooltip(
+                `<div>
+                     Extreme | FRP: 166.25
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd4aa229e13e034c1fb3544b148ed08f = L.circleMarker(
+                [9.70961, -13.03338],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.42456224189633, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_18a5c37e8350a1ffa5b36d1d0c6fbca5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a83d3c67c1bfb3c0ce5ce6bc33b1a20c = $(`<div id="html_a83d3c67c1bfb3c0ce5ce6bc33b1a20c" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 165.10<br>     <b>Brightness TI4:</b> 343.46<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.7096, -13.0334     </div>`)[0];
+                popup_18a5c37e8350a1ffa5b36d1d0c6fbca5.setContent(html_a83d3c67c1bfb3c0ce5ce6bc33b1a20c);
+            
+        
+
+        circle_marker_fd4aa229e13e034c1fb3544b148ed08f.bindPopup(popup_18a5c37e8350a1ffa5b36d1d0c6fbca5)
+        ;
+
+        
+    
+    
+            circle_marker_fd4aa229e13e034c1fb3544b148ed08f.bindTooltip(
+                `<div>
+                     Extreme | FRP: 165.10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_84b05bad417ecce3dd276074940fe013 = L.circleMarker(
+                [10.07266, -13.27585],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.393746945258313, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_7510d91b0c0651bf4e6ec6ce2e629c59 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eaa0032572b557ab4b0bc672f9442bd5 = $(`<div id="html_eaa0032572b557ab4b0bc672f9442bd5" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 163.52<br>     <b>Brightness TI4:</b> 334.04<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.0727, -13.2759     </div>`)[0];
+                popup_7510d91b0c0651bf4e6ec6ce2e629c59.setContent(html_eaa0032572b557ab4b0bc672f9442bd5);
+            
+        
+
+        circle_marker_84b05bad417ecce3dd276074940fe013.bindPopup(popup_7510d91b0c0651bf4e6ec6ce2e629c59)
+        ;
+
+        
+    
+    
+            circle_marker_84b05bad417ecce3dd276074940fe013.bindTooltip(
+                `<div>
+                     Extreme | FRP: 163.52
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_676a853e98a7fd545b8926f8cdc6edcb = L.circleMarker(
+                [10.07661, -13.28209],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.393746945258313, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_b6756844272d56c51b27fad2570eb064 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2deee678a9f213ddb5e85f742d9d03df = $(`<div id="html_2deee678a9f213ddb5e85f742d9d03df" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 163.52<br>     <b>Brightness TI4:</b> 354.23<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.0766, -13.2821     </div>`)[0];
+                popup_b6756844272d56c51b27fad2570eb064.setContent(html_2deee678a9f213ddb5e85f742d9d03df);
+            
+        
+
+        circle_marker_676a853e98a7fd545b8926f8cdc6edcb.bindPopup(popup_b6756844272d56c51b27fad2570eb064)
+        ;
+
+        
+    
+    
+            circle_marker_676a853e98a7fd545b8926f8cdc6edcb.bindTooltip(
+                `<div>
+                     Extreme | FRP: 163.52
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70ac1f77857017a754f73168aba58d6a = L.circleMarker(
+                [10.0717, -13.28116],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.393746945258313, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_1e5890e2ea6edbe19026f8df4cb4e453 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2499b27d55e1fbda5f8b681dffbc674e = $(`<div id="html_2499b27d55e1fbda5f8b681dffbc674e" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 163.52<br>     <b>Brightness TI4:</b> 350.85<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.0717, -13.2812     </div>`)[0];
+                popup_1e5890e2ea6edbe19026f8df4cb4e453.setContent(html_2499b27d55e1fbda5f8b681dffbc674e);
+            
+        
+
+        circle_marker_70ac1f77857017a754f73168aba58d6a.bindPopup(popup_1e5890e2ea6edbe19026f8df4cb4e453)
+        ;
+
+        
+    
+    
+            circle_marker_70ac1f77857017a754f73168aba58d6a.bindTooltip(
+                `<div>
+                     Extreme | FRP: 163.52
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d6e34111ed24b2535446d79cefee92f5 = L.circleMarker(
+                [40.58333, 128.90945],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.32435767489474, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_d3264d0d69140ea62e2d8c0ab4affa10 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_93bc5622e5184ea8787971ddf30c224e = $(`<div id="html_93bc5622e5184ea8787971ddf30c224e" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 03:49:00<br>     <b>FRP:</b> 159.99<br>     <b>Brightness TI4:</b> 352.16<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 40.5833, 128.9094     </div>`)[0];
+                popup_d3264d0d69140ea62e2d8c0ab4affa10.setContent(html_93bc5622e5184ea8787971ddf30c224e);
+            
+        
+
+        circle_marker_d6e34111ed24b2535446d79cefee92f5.bindPopup(popup_d3264d0d69140ea62e2d8c0ab4affa10)
+        ;
+
+        
+    
+    
+            circle_marker_d6e34111ed24b2535446d79cefee92f5.bindTooltip(
+                `<div>
+                     Extreme | FRP: 159.99
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4af7d519b9e80cf557ee3076cf2d0194 = L.circleMarker(
+                [26.28875, 97.66979],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.237186865887537, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_b867223c6d010a5cb68f0b548f66cda6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a8e5c0d55ac04ba04e6dd7eb9b69297e = $(`<div id="html_a8e5c0d55ac04ba04e6dd7eb9b69297e" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:05:00<br>     <b>FRP:</b> 155.61<br>     <b>Brightness TI4:</b> 345.62<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 26.2888, 97.6698     </div>`)[0];
+                popup_b867223c6d010a5cb68f0b548f66cda6.setContent(html_a8e5c0d55ac04ba04e6dd7eb9b69297e);
+            
+        
+
+        circle_marker_4af7d519b9e80cf557ee3076cf2d0194.bindPopup(popup_b867223c6d010a5cb68f0b548f66cda6)
+        ;
+
+        
+    
+    
+            circle_marker_4af7d519b9e80cf557ee3076cf2d0194.bindTooltip(
+                `<div>
+                     Extreme | FRP: 155.61
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70c2502c524d3bb95ef5fea2ac71869b = L.circleMarker(
+                [8.83477, -11.51023],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.21952570538944, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_c891b9f295831e22d9ed486a7693b425 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e77d3d741f73466ecff92257f1d67d9c = $(`<div id="html_e77d3d741f73466ecff92257f1d67d9c" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 154.73<br>     <b>Brightness TI4:</b> 334.98<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 8.8348, -11.5102     </div>`)[0];
+                popup_c891b9f295831e22d9ed486a7693b425.setContent(html_e77d3d741f73466ecff92257f1d67d9c);
+            
+        
+
+        circle_marker_70c2502c524d3bb95ef5fea2ac71869b.bindPopup(popup_c891b9f295831e22d9ed486a7693b425)
+        ;
+
+        
+    
+    
+            circle_marker_70c2502c524d3bb95ef5fea2ac71869b.bindTooltip(
+                `<div>
+                     Extreme | FRP: 154.73
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_49c848d6af92fe6fcfbb90618d48f16e = L.circleMarker(
+                [10.0702, -11.52822],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.165022303284879, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_d0de2f0f4d40f0be20c3deffaaeaacbc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7dc6e1e2a247cc707412b9ae19d18be5 = $(`<div id="html_7dc6e1e2a247cc707412b9ae19d18be5" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 152.03<br>     <b>Brightness TI4:</b> 339.36<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.0702, -11.5282     </div>`)[0];
+                popup_d0de2f0f4d40f0be20c3deffaaeaacbc.setContent(html_7dc6e1e2a247cc707412b9ae19d18be5);
+            
+        
+
+        circle_marker_49c848d6af92fe6fcfbb90618d48f16e.bindPopup(popup_d0de2f0f4d40f0be20c3deffaaeaacbc)
+        ;
+
+        
+    
+    
+            circle_marker_49c848d6af92fe6fcfbb90618d48f16e.bindTooltip(
+                `<div>
+                     Extreme | FRP: 152.03
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0a8045e690d476db5a136817b2dd2899 = L.circleMarker(
+                [60.42697, 96.52209],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.157109711544857, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_3bee3d07225a48b425be053400ec2a23 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e11938716e49ae0b182d05e1814800c5 = $(`<div id="html_e11938716e49ae0b182d05e1814800c5" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:16:00<br>     <b>FRP:</b> 151.64<br>     <b>Brightness TI4:</b> 335.05<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 60.4270, 96.5221     </div>`)[0];
+                popup_3bee3d07225a48b425be053400ec2a23.setContent(html_e11938716e49ae0b182d05e1814800c5);
+            
+        
+
+        circle_marker_0a8045e690d476db5a136817b2dd2899.bindPopup(popup_3bee3d07225a48b425be053400ec2a23)
+        ;
+
+        
+    
+    
+            circle_marker_0a8045e690d476db5a136817b2dd2899.bindTooltip(
+                `<div>
+                     Extreme | FRP: 151.64
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_06753e4c00c1d0a8207611fbe161b4a7 = L.circleMarker(
+                [9.28125, -12.87423],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.152032184571208, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_c17e70ba945356dd5e53d54d5c93f993 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_724f03041644245d22d4568a814d659c = $(`<div id="html_724f03041644245d22d4568a814d659c" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 151.39<br>     <b>Brightness TI4:</b> 346.52<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.2812, -12.8742     </div>`)[0];
+                popup_c17e70ba945356dd5e53d54d5c93f993.setContent(html_724f03041644245d22d4568a814d659c);
+            
+        
+
+        circle_marker_06753e4c00c1d0a8207611fbe161b4a7.bindPopup(popup_c17e70ba945356dd5e53d54d5c93f993)
+        ;
+
+        
+    
+    
+            circle_marker_06753e4c00c1d0a8207611fbe161b4a7.bindTooltip(
+                `<div>
+                     Extreme | FRP: 151.39
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_342a306b22af77dfa3eb52103765c8c7 = L.circleMarker(
+                [10.07952, -13.26585],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.14817045957576, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_cb159afcbaa0e7223212db81f31ad440 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_301afb18ab4ec15d129ad37ee59d0767 = $(`<div id="html_301afb18ab4ec15d129ad37ee59d0767" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 151.20<br>     <b>Brightness TI4:</b> 347.02<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.0795, -13.2659     </div>`)[0];
+                popup_cb159afcbaa0e7223212db81f31ad440.setContent(html_301afb18ab4ec15d129ad37ee59d0767);
+            
+        
+
+        circle_marker_342a306b22af77dfa3eb52103765c8c7.bindPopup(popup_cb159afcbaa0e7223212db81f31ad440)
+        ;
+
+        
+    
+    
+            circle_marker_342a306b22af77dfa3eb52103765c8c7.bindTooltip(
+                `<div>
+                     Extreme | FRP: 151.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0c66d3bd3f87b3c497a46f64e3d55307 = L.circleMarker(
+                [10.07853, -13.2714],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.14817045957576, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_44639aa0da8fbc8348ddf62a0a0b997b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7c1ab745a46f9e6a19ffbc94f7b1fe9f = $(`<div id="html_7c1ab745a46f9e6a19ffbc94f7b1fe9f" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 151.20<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.0785, -13.2714     </div>`)[0];
+                popup_44639aa0da8fbc8348ddf62a0a0b997b.setContent(html_7c1ab745a46f9e6a19ffbc94f7b1fe9f);
+            
+        
+
+        circle_marker_0c66d3bd3f87b3c497a46f64e3d55307.bindPopup(popup_44639aa0da8fbc8348ddf62a0a0b997b)
+        ;
+
+        
+    
+    
+            circle_marker_0c66d3bd3f87b3c497a46f64e3d55307.bindTooltip(
+                `<div>
+                     Extreme | FRP: 151.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a7814a97e9a68c609e522b9a8b77fdc0 = L.circleMarker(
+                [10.07361, -13.27055],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.14817045957576, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_309fff4457a480784a5bddfb0fdfa34c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d0ea65119b62eda4fafec63d860094f = $(`<div id="html_6d0ea65119b62eda4fafec63d860094f" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 151.20<br>     <b>Brightness TI4:</b> 357.21<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.0736, -13.2706     </div>`)[0];
+                popup_309fff4457a480784a5bddfb0fdfa34c.setContent(html_6d0ea65119b62eda4fafec63d860094f);
+            
+        
+
+        circle_marker_a7814a97e9a68c609e522b9a8b77fdc0.bindPopup(popup_309fff4457a480784a5bddfb0fdfa34c)
+        ;
+
+        
+    
+    
+            circle_marker_a7814a97e9a68c609e522b9a8b77fdc0.bindTooltip(
+                `<div>
+                     Extreme | FRP: 151.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb6952efe60edcead17f70ca689b09dd = L.circleMarker(
+                [10.0746, -13.26504],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.14817045957576, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_ac6f09cafa406d59fbc5931260035110 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_92e14a8507a7896d11205f21fd065e57 = $(`<div id="html_92e14a8507a7896d11205f21fd065e57" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 151.20<br>     <b>Brightness TI4:</b> 352.33<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.0746, -13.2650     </div>`)[0];
+                popup_ac6f09cafa406d59fbc5931260035110.setContent(html_92e14a8507a7896d11205f21fd065e57);
+            
+        
+
+        circle_marker_bb6952efe60edcead17f70ca689b09dd.bindPopup(popup_ac6f09cafa406d59fbc5931260035110)
+        ;
+
+        
+    
+    
+            circle_marker_bb6952efe60edcead17f70ca689b09dd.bindTooltip(
+                `<div>
+                     Extreme | FRP: 151.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a814867050ac526182b3565b4266eb2f = L.circleMarker(
+                [9.80182, -13.06309],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.091592566808782, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_6117fcf2a9aef47a82430855fcd76f97 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e3324d750baf047d0aafcbe4331ded17 = $(`<div id="html_e3324d750baf047d0aafcbe4331ded17" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 148.43<br>     <b>Brightness TI4:</b> 345.76<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.8018, -13.0631     </div>`)[0];
+                popup_6117fcf2a9aef47a82430855fcd76f97.setContent(html_e3324d750baf047d0aafcbe4331ded17);
+            
+        
+
+        circle_marker_a814867050ac526182b3565b4266eb2f.bindPopup(popup_6117fcf2a9aef47a82430855fcd76f97)
+        ;
+
+        
+    
+    
+            circle_marker_a814867050ac526182b3565b4266eb2f.bindTooltip(
+                `<div>
+                     Extreme | FRP: 148.43
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e683c1153e0b34d458e3a815d7b76ec2 = L.circleMarker(
+                [-17.76426, 124.10098],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.08173494983134, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_d4eaccdc44e02d7511cad6bb81f63b14 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_375829caae43a3873a7370de60945a3f = $(`<div id="html_375829caae43a3873a7370de60945a3f" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:12:00<br>     <b>FRP:</b> 147.95<br>     <b>Brightness TI4:</b> 337.32<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -17.7643, 124.1010     </div>`)[0];
+                popup_d4eaccdc44e02d7511cad6bb81f63b14.setContent(html_375829caae43a3873a7370de60945a3f);
+            
+        
+
+        circle_marker_e683c1153e0b34d458e3a815d7b76ec2.bindPopup(popup_d4eaccdc44e02d7511cad6bb81f63b14)
+        ;
+
+        
+    
+    
+            circle_marker_e683c1153e0b34d458e3a815d7b76ec2.bindTooltip(
+                `<div>
+                     Extreme | FRP: 147.95
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af2c5053929105fb6ff033113f5aec93 = L.circleMarker(
+                [-14.40857, 130.30379],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.071655457945552, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_106b548e87742929d0671573c3398b89 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8c27ede0bb5c6d3d600d5a7ecad629fa = $(`<div id="html_8c27ede0bb5c6d3d600d5a7ecad629fa" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:12:00<br>     <b>FRP:</b> 147.46<br>     <b>Brightness TI4:</b> 355.93<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -14.4086, 130.3038     </div>`)[0];
+                popup_106b548e87742929d0671573c3398b89.setContent(html_8c27ede0bb5c6d3d600d5a7ecad629fa);
+            
+        
+
+        circle_marker_af2c5053929105fb6ff033113f5aec93.bindPopup(popup_106b548e87742929d0671573c3398b89)
+        ;
+
+        
+    
+    
+            circle_marker_af2c5053929105fb6ff033113f5aec93.bindTooltip(
+                `<div>
+                     Extreme | FRP: 147.46
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d8c27513d7b4b1163b43cbbbad2fe82 = L.circleMarker(
+                [22.73571, 93.15327],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.055163086160437, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_b4086ec64289691e4f97c9344c2a23f5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_122327589c7c0914a2b1db86fc5a9a04 = $(`<div id="html_122327589c7c0914a2b1db86fc5a9a04" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:03:00<br>     <b>FRP:</b> 146.66<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 22.7357, 93.1533     </div>`)[0];
+                popup_b4086ec64289691e4f97c9344c2a23f5.setContent(html_122327589c7c0914a2b1db86fc5a9a04);
+            
+        
+
+        circle_marker_3d8c27513d7b4b1163b43cbbbad2fe82.bindPopup(popup_b4086ec64289691e4f97c9344c2a23f5)
+        ;
+
+        
+    
+    
+            circle_marker_3d8c27513d7b4b1163b43cbbbad2fe82.bindTooltip(
+                `<div>
+                     Extreme | FRP: 146.66
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71ea667ed558a620b1b58e8bf57fe549 = L.circleMarker(
+                [22.73901, 93.15267],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.055163086160437, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_967e52ccaeb324fc928310f92da6d471 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bcb3ce9403007977ae86c9d23fdb20bf = $(`<div id="html_bcb3ce9403007977ae86c9d23fdb20bf" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:03:00<br>     <b>FRP:</b> 146.66<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 22.7390, 93.1527     </div>`)[0];
+                popup_967e52ccaeb324fc928310f92da6d471.setContent(html_bcb3ce9403007977ae86c9d23fdb20bf);
+            
+        
+
+        circle_marker_71ea667ed558a620b1b58e8bf57fe549.bindPopup(popup_967e52ccaeb324fc928310f92da6d471)
+        ;
+
+        
+    
+    
+            circle_marker_71ea667ed558a620b1b58e8bf57fe549.bindTooltip(
+                `<div>
+                     Extreme | FRP: 146.66
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6cd1669b17b2dc4f66ede59885db6d1f = L.circleMarker(
+                [10.21884, -13.28622],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.017474553332153, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_57095a6d2ff21bf95399d407bb1617a9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e421183294e2742fceb72dbc4a453781 = $(`<div id="html_e421183294e2742fceb72dbc4a453781" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 144.84<br>     <b>Brightness TI4:</b> 353.12<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.2188, -13.2862     </div>`)[0];
+                popup_57095a6d2ff21bf95399d407bb1617a9.setContent(html_e421183294e2742fceb72dbc4a453781);
+            
+        
+
+        circle_marker_6cd1669b17b2dc4f66ede59885db6d1f.bindPopup(popup_57095a6d2ff21bf95399d407bb1617a9)
+        ;
+
+        
+    
+    
+            circle_marker_6cd1669b17b2dc4f66ede59885db6d1f.bindTooltip(
+                `<div>
+                     Extreme | FRP: 144.84
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_18a03ecfe5083319c48940da1241b851 = L.circleMarker(
+                [10.52856, -13.0858],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.998124706939661, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_9ee94793240b181b8fdb031c30eb74a4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d3609f5f6ecafaf91accf2ff9d4e6a96 = $(`<div id="html_d3609f5f6ecafaf91accf2ff9d4e6a96" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 143.91<br>     <b>Brightness TI4:</b> 357.17<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.5286, -13.0858     </div>`)[0];
+                popup_9ee94793240b181b8fdb031c30eb74a4.setContent(html_d3609f5f6ecafaf91accf2ff9d4e6a96);
+            
+        
+
+        circle_marker_18a03ecfe5083319c48940da1241b851.bindPopup(popup_9ee94793240b181b8fdb031c30eb74a4)
+        ;
+
+        
+    
+    
+            circle_marker_18a03ecfe5083319c48940da1241b851.bindTooltip(
+                `<div>
+                     Extreme | FRP: 143.91
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d72e238e7b9d6fafe402038cb7c994f = L.circleMarker(
+                [10.53439, -13.081],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.998124706939661, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_6c21e584d91b077a4811c37b4cd4ee3b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0613ed544fb942a95dd3df49ba4f56e5 = $(`<div id="html_0613ed544fb942a95dd3df49ba4f56e5" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 143.91<br>     <b>Brightness TI4:</b> 349.02<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 10.5344, -13.0810     </div>`)[0];
+                popup_6c21e584d91b077a4811c37b4cd4ee3b.setContent(html_0613ed544fb942a95dd3df49ba4f56e5);
+            
+        
+
+        circle_marker_0d72e238e7b9d6fafe402038cb7c994f.bindPopup(popup_6c21e584d91b077a4811c37b4cd4ee3b)
+        ;
+
+        
+    
+    
+            circle_marker_0d72e238e7b9d6fafe402038cb7c994f.bindTooltip(
+                `<div>
+                     Extreme | FRP: 143.91
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eb3c6e95171feaffed97241912d2bdf9 = L.circleMarker(
+                [-37.84894, 141.81207],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.931062299453615, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_7a9c876b2499c4f23f6f735be5bb1a23 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_97d81dea53f6fee0e216812d7d06bf9b = $(`<div id="html_97d81dea53f6fee0e216812d7d06bf9b" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 03:25:00<br>     <b>FRP:</b> 140.71<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -37.8489, 141.8121     </div>`)[0];
+                popup_7a9c876b2499c4f23f6f735be5bb1a23.setContent(html_97d81dea53f6fee0e216812d7d06bf9b);
+            
+        
+
+        circle_marker_eb3c6e95171feaffed97241912d2bdf9.bindPopup(popup_7a9c876b2499c4f23f6f735be5bb1a23)
+        ;
+
+        
+    
+    
+            circle_marker_eb3c6e95171feaffed97241912d2bdf9.bindTooltip(
+                `<div>
+                     Extreme | FRP: 140.71
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a4cf9770b427c6fc6ddee21e36ce2e2e = L.circleMarker(
+                [-41.07423, 147.67963],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.913121003328108, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_7460f3123b170da8af09ecd868617172 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_26bc0a8c9a59458e30be41f1aaa426ba = $(`<div id="html_26bc0a8c9a59458e30be41f1aaa426ba" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:04:00<br>     <b>FRP:</b> 139.86<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -41.0742, 147.6796     </div>`)[0];
+                popup_7460f3123b170da8af09ecd868617172.setContent(html_26bc0a8c9a59458e30be41f1aaa426ba);
+            
+        
+
+        circle_marker_a4cf9770b427c6fc6ddee21e36ce2e2e.bindPopup(popup_7460f3123b170da8af09ecd868617172)
+        ;
+
+        
+    
+    
+            circle_marker_a4cf9770b427c6fc6ddee21e36ce2e2e.bindTooltip(
+                `<div>
+                     Extreme | FRP: 139.86
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1495776ab55caf3e6301e1197f99f862 = L.circleMarker(
+                [21.6774, 92.70863],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.871115737234277, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_b41cb0c94a0d56720dabc4b560fbfa3f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_89af7221fe2ec6c3d25745e885bc72c5 = $(`<div id="html_89af7221fe2ec6c3d25745e885bc72c5" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:03:00<br>     <b>FRP:</b> 137.88<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 21.6774, 92.7086     </div>`)[0];
+                popup_b41cb0c94a0d56720dabc4b560fbfa3f.setContent(html_89af7221fe2ec6c3d25745e885bc72c5);
+            
+        
+
+        circle_marker_1495776ab55caf3e6301e1197f99f862.bindPopup(popup_b41cb0c94a0d56720dabc4b560fbfa3f)
+        ;
+
+        
+    
+    
+            circle_marker_1495776ab55caf3e6301e1197f99f862.bindTooltip(
+                `<div>
+                     Extreme | FRP: 137.88
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c89fb25689b7c766afece3a281c378b0 = L.circleMarker(
+                [21.68072, 92.70799],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.871115737234277, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_09c794e286c3048007a22c8a64936d0c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d3f7afc36a1095b86848ecaac82060b = $(`<div id="html_6d3f7afc36a1095b86848ecaac82060b" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:03:00<br>     <b>FRP:</b> 137.88<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 21.6807, 92.7080     </div>`)[0];
+                popup_09c794e286c3048007a22c8a64936d0c.setContent(html_6d3f7afc36a1095b86848ecaac82060b);
+            
+        
+
+        circle_marker_c89fb25689b7c766afece3a281c378b0.bindPopup(popup_09c794e286c3048007a22c8a64936d0c)
+        ;
+
+        
+    
+    
+            circle_marker_c89fb25689b7c766afece3a281c378b0.bindTooltip(
+                `<div>
+                     Extreme | FRP: 137.88
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb9fad019fd595bc78bc92346abe2865 = L.circleMarker(
+                [21.68132, 92.71178],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.871115737234277, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_548a4f37528ce818b58b5381b557f58b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_33ef98584311e9fe0d49f2cc75b59f11 = $(`<div id="html_33ef98584311e9fe0d49f2cc75b59f11" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:03:00<br>     <b>FRP:</b> 137.88<br>     <b>Brightness TI4:</b> 349.67<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 21.6813, 92.7118     </div>`)[0];
+                popup_548a4f37528ce818b58b5381b557f58b.setContent(html_33ef98584311e9fe0d49f2cc75b59f11);
+            
+        
+
+        circle_marker_fb9fad019fd595bc78bc92346abe2865.bindPopup(popup_548a4f37528ce818b58b5381b557f58b)
+        ;
+
+        
+    
+    
+            circle_marker_fb9fad019fd595bc78bc92346abe2865.bindTooltip(
+                `<div>
+                     Extreme | FRP: 137.88
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70a26e4278ee3da8a65ecb932351c96a = L.circleMarker(
+                [-36.88067, 142.29919],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.820867632922088, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_3d1e3c1ffbce6a07c1851e907d344ea3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8c2c707b84c479767f92d1097bb87006 = $(`<div id="html_8c2c707b84c479767f92d1097bb87006" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 03:25:00<br>     <b>FRP:</b> 135.53<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -36.8807, 142.2992     </div>`)[0];
+                popup_3d1e3c1ffbce6a07c1851e907d344ea3.setContent(html_8c2c707b84c479767f92d1097bb87006);
+            
+        
+
+        circle_marker_70a26e4278ee3da8a65ecb932351c96a.bindPopup(popup_3d1e3c1ffbce6a07c1851e907d344ea3)
+        ;
+
+        
+    
+    
+            circle_marker_70a26e4278ee3da8a65ecb932351c96a.bindTooltip(
+                `<div>
+                     Extreme | FRP: 135.53
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2b93c7c6e6d857e0a254134151671ea6 = L.circleMarker(
+                [9.38123, -12.91666],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.789214109013416, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_6a946fc833f3081b7e8337f8a188481f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9dfac022625eea7eb7e7915acab13201 = $(`<div id="html_9dfac022625eea7eb7e7915acab13201" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 134.06<br>     <b>Brightness TI4:</b> 345.41<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.3812, -12.9167     </div>`)[0];
+                popup_6a946fc833f3081b7e8337f8a188481f.setContent(html_9dfac022625eea7eb7e7915acab13201);
+            
+        
+
+        circle_marker_2b93c7c6e6d857e0a254134151671ea6.bindPopup(popup_6a946fc833f3081b7e8337f8a188481f)
+        ;
+
+        
+    
+    
+            circle_marker_2b93c7c6e6d857e0a254134151671ea6.bindTooltip(
+                `<div>
+                     Extreme | FRP: 134.06
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eb063f479ed1af4204256a1da120dc9d = L.circleMarker(
+                [9.38026, -12.92211],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.789214109013416, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_db4e3fda149f43540288b17407e97a8e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_68fa585eb6bfc7041eec252c8db74419 = $(`<div id="html_68fa585eb6bfc7041eec252c8db74419" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 134.06<br>     <b>Brightness TI4:</b> 337.86<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.3803, -12.9221     </div>`)[0];
+                popup_db4e3fda149f43540288b17407e97a8e.setContent(html_68fa585eb6bfc7041eec252c8db74419);
+            
+        
+
+        circle_marker_eb063f479ed1af4204256a1da120dc9d.bindPopup(popup_db4e3fda149f43540288b17407e97a8e)
+        ;
+
+        
+    
+    
+            circle_marker_eb063f479ed1af4204256a1da120dc9d.bindTooltip(
+                `<div>
+                     Extreme | FRP: 134.06
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_27173a8d8b25a0a73f24d8055fedbbe8 = L.circleMarker(
+                [9.38513, -12.92294],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.789214109013416, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_903ccbcdd4fd70b2ddf19660ff6c2c23 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a7fe472967efc756ca63ea3ff8679399 = $(`<div id="html_a7fe472967efc756ca63ea3ff8679399" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 134.06<br>     <b>Brightness TI4:</b> 346.60<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.3851, -12.9229     </div>`)[0];
+                popup_903ccbcdd4fd70b2ddf19660ff6c2c23.setContent(html_a7fe472967efc756ca63ea3ff8679399);
+            
+        
+
+        circle_marker_27173a8d8b25a0a73f24d8055fedbbe8.bindPopup(popup_903ccbcdd4fd70b2ddf19660ff6c2c23)
+        ;
+
+        
+    
+    
+            circle_marker_27173a8d8b25a0a73f24d8055fedbbe8.bindTooltip(
+                `<div>
+                     Extreme | FRP: 134.06
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4a20fba7f67346160b64844a2abbcd26 = L.circleMarker(
+                [9.36943, -12.81462],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.76346250096242, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_a35c57e41d9a0d60d6337e9cab24b38c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_82d78dfecd200341eb78bbac0840195c = $(`<div id="html_82d78dfecd200341eb78bbac0840195c" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 132.87<br>     <b>Brightness TI4:</b> 356.27<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.3694, -12.8146     </div>`)[0];
+                popup_a35c57e41d9a0d60d6337e9cab24b38c.setContent(html_82d78dfecd200341eb78bbac0840195c);
+            
+        
+
+        circle_marker_4a20fba7f67346160b64844a2abbcd26.bindPopup(popup_a35c57e41d9a0d60d6337e9cab24b38c)
+        ;
+
+        
+    
+    
+            circle_marker_4a20fba7f67346160b64844a2abbcd26.bindTooltip(
+                `<div>
+                     Extreme | FRP: 132.87
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_316ca28973ace0edb874fe36722d0767 = L.circleMarker(
+                [9.37331, -12.82076],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.76346250096242, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_508115fa0cd91a91b41595a3d5f48402 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_600d97726003174f7cfde1d82a38512c = $(`<div id="html_600d97726003174f7cfde1d82a38512c" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 132.87<br>     <b>Brightness TI4:</b> 336.92<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.3733, -12.8208     </div>`)[0];
+                popup_508115fa0cd91a91b41595a3d5f48402.setContent(html_600d97726003174f7cfde1d82a38512c);
+            
+        
+
+        circle_marker_316ca28973ace0edb874fe36722d0767.bindPopup(popup_508115fa0cd91a91b41595a3d5f48402)
+        ;
+
+        
+    
+    
+            circle_marker_316ca28973ace0edb874fe36722d0767.bindTooltip(
+                `<div>
+                     Extreme | FRP: 132.87
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_05670e75ff3a812f69e77124a245d1ae = L.circleMarker(
+                [40.57875, 128.91133],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.744780239486973, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_494c4fc3c8a3f67decfcd81cf5e8dfae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3abbfe84ad809a4cfd39e29e61a813b9 = $(`<div id="html_3abbfe84ad809a4cfd39e29e61a813b9" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 03:49:00<br>     <b>FRP:</b> 132.01<br>     <b>Brightness TI4:</b> 340.36<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 40.5787, 128.9113     </div>`)[0];
+                popup_494c4fc3c8a3f67decfcd81cf5e8dfae.setContent(html_3abbfe84ad809a4cfd39e29e61a813b9);
+            
+        
+
+        circle_marker_05670e75ff3a812f69e77124a245d1ae.bindPopup(popup_494c4fc3c8a3f67decfcd81cf5e8dfae)
+        ;
+
+        
+    
+    
+            circle_marker_05670e75ff3a812f69e77124a245d1ae.bindTooltip(
+                `<div>
+                     Extreme | FRP: 132.01
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4c63ffb7065eb3dafe54f3fcdb25cb0a = L.circleMarker(
+                [40.57397, 128.91241],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.744780239486973, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_da4cdc5bd077439184474cb5059b0c14 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_77691192bc2c4fa1f555cc8b3c2f366c = $(`<div id="html_77691192bc2c4fa1f555cc8b3c2f366c" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 03:49:00<br>     <b>FRP:</b> 132.01<br>     <b>Brightness TI4:</b> 345.88<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 40.5740, 128.9124     </div>`)[0];
+                popup_da4cdc5bd077439184474cb5059b0c14.setContent(html_77691192bc2c4fa1f555cc8b3c2f366c);
+            
+        
+
+        circle_marker_4c63ffb7065eb3dafe54f3fcdb25cb0a.bindPopup(popup_da4cdc5bd077439184474cb5059b0c14)
+        ;
+
+        
+    
+    
+            circle_marker_4c63ffb7065eb3dafe54f3fcdb25cb0a.bindTooltip(
+                `<div>
+                     Extreme | FRP: 132.01
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_93eb6d689bf5a77394099d828329a82f = L.circleMarker(
+                [-37.10335, 149.18513],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.722543140947039, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_971d40071773dfaf517f207686952ad5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a566969ccd0aea9d04b37ceb3bc02892 = $(`<div id="html_a566969ccd0aea9d04b37ceb3bc02892" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:06:00<br>     <b>FRP:</b> 130.99<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -37.1033, 149.1851     </div>`)[0];
+                popup_971d40071773dfaf517f207686952ad5.setContent(html_a566969ccd0aea9d04b37ceb3bc02892);
+            
+        
+
+        circle_marker_93eb6d689bf5a77394099d828329a82f.bindPopup(popup_971d40071773dfaf517f207686952ad5)
+        ;
+
+        
+    
+    
+            circle_marker_93eb6d689bf5a77394099d828329a82f.bindTooltip(
+                `<div>
+                     Extreme | FRP: 130.99
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_54bb11eee1f999592299516da7c54f7a = L.circleMarker(
+                [-37.09899, 149.17607],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.722543140947039, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_0a086526e9e2545969798bbb1ffe30c2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_439ba707735399feff8e18b6257a6a69 = $(`<div id="html_439ba707735399feff8e18b6257a6a69" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:06:00<br>     <b>FRP:</b> 130.99<br>     <b>Brightness TI4:</b> 352.33<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -37.0990, 149.1761     </div>`)[0];
+                popup_0a086526e9e2545969798bbb1ffe30c2.setContent(html_439ba707735399feff8e18b6257a6a69);
+            
+        
+
+        circle_marker_54bb11eee1f999592299516da7c54f7a.bindPopup(popup_0a086526e9e2545969798bbb1ffe30c2)
+        ;
+
+        
+    
+    
+            circle_marker_54bb11eee1f999592299516da7c54f7a.bindTooltip(
+                `<div>
+                     Extreme | FRP: 130.99
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6b3492a6d9d34cc2f46c6280fc9602df = L.circleMarker(
+                [-36.8788, 142.29898],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.719047123428869, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_7693e2d9df5d570819679ed0bef2812e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9568a274a7e630f9b6638f4472d717e4 = $(`<div id="html_9568a274a7e630f9b6638f4472d717e4" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 03:25:00<br>     <b>FRP:</b> 130.83<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -36.8788, 142.2990     </div>`)[0];
+                popup_7693e2d9df5d570819679ed0bef2812e.setContent(html_9568a274a7e630f9b6638f4472d717e4);
+            
+        
+
+        circle_marker_6b3492a6d9d34cc2f46c6280fc9602df.bindPopup(popup_7693e2d9df5d570819679ed0bef2812e)
+        ;
+
+        
+    
+    
+            circle_marker_6b3492a6d9d34cc2f46c6280fc9602df.bindTooltip(
+                `<div>
+                     Extreme | FRP: 130.83
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9df78f20ad5940cf245c038836814488 = L.circleMarker(
+                [8.56893, -12.92787],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.705260730238365, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_ae2e5320cc4a29320b9a5291265cd329 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6cef5479160fa8201499689393c9cc34 = $(`<div id="html_6cef5479160fa8201499689393c9cc34" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 130.20<br>     <b>Brightness TI4:</b> 336.20<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 8.5689, -12.9279     </div>`)[0];
+                popup_ae2e5320cc4a29320b9a5291265cd329.setContent(html_6cef5479160fa8201499689393c9cc34);
+            
+        
+
+        circle_marker_9df78f20ad5940cf245c038836814488.bindPopup(popup_ae2e5320cc4a29320b9a5291265cd329)
+        ;
+
+        
+    
+    
+            circle_marker_9df78f20ad5940cf245c038836814488.bindTooltip(
+                `<div>
+                     Extreme | FRP: 130.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e95f2b80f953adffd690a5a34808c05c = L.circleMarker(
+                [9.00764, -12.15096],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.69780659552428, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_5e291d08600d6cf85d8b25b3e920182f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d8f47542a57fa97d68155785b2b9e9c6 = $(`<div id="html_d8f47542a57fa97d68155785b2b9e9c6" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 129.86<br>     <b>Brightness TI4:</b> 348.28<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.0076, -12.1510     </div>`)[0];
+                popup_5e291d08600d6cf85d8b25b3e920182f.setContent(html_d8f47542a57fa97d68155785b2b9e9c6);
+            
+        
+
+        circle_marker_e95f2b80f953adffd690a5a34808c05c.bindPopup(popup_5e291d08600d6cf85d8b25b3e920182f)
+        ;
+
+        
+    
+    
+            circle_marker_e95f2b80f953adffd690a5a34808c05c.bindTooltip(
+                `<div>
+                     Extreme | FRP: 129.86
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_53832b166b2c72a5a1f406a103200632 = L.circleMarker(
+                [9.01229, -12.15173],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.69780659552428, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_ab92dbbc5ae3d0385931dfb2f0b61555 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ff0ec97aa3cc5d6c94121e9f987bcbd0 = $(`<div id="html_ff0ec97aa3cc5d6c94121e9f987bcbd0" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 129.86<br>     <b>Brightness TI4:</b> 333.26<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.0123, -12.1517     </div>`)[0];
+                popup_ab92dbbc5ae3d0385931dfb2f0b61555.setContent(html_ff0ec97aa3cc5d6c94121e9f987bcbd0);
+            
+        
+
+        circle_marker_53832b166b2c72a5a1f406a103200632.bindPopup(popup_ab92dbbc5ae3d0385931dfb2f0b61555)
+        ;
+
+        
+    
+    
+            circle_marker_53832b166b2c72a5a1f406a103200632.bindTooltip(
+                `<div>
+                     Extreme | FRP: 129.86
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb7bfdd44e3289a226e515a2c988819f = L.circleMarker(
+                [9.66858, -12.98209],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.695831809314598, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_c706803e17e1e8bbfa13ad1eb4f10c0b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3a288825322c123e77171165543a71f2 = $(`<div id="html_3a288825322c123e77171165543a71f2" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 129.77<br>     <b>Brightness TI4:</b> 339.84<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.6686, -12.9821     </div>`)[0];
+                popup_c706803e17e1e8bbfa13ad1eb4f10c0b.setContent(html_3a288825322c123e77171165543a71f2);
+            
+        
+
+        circle_marker_fb7bfdd44e3289a226e515a2c988819f.bindPopup(popup_c706803e17e1e8bbfa13ad1eb4f10c0b)
+        ;
+
+        
+    
+    
+            circle_marker_fb7bfdd44e3289a226e515a2c988819f.bindTooltip(
+                `<div>
+                     Extreme | FRP: 129.77
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_28b7668afb91fa88917a8027d5bddb1f = L.circleMarker(
+                [9.66372, -12.98125],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.695831809314598, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_5da161e27ce580e6d3c3d6e2f3fcd6ef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6e2837b3943cfdf964dc512a4b1bd8eb = $(`<div id="html_6e2837b3943cfdf964dc512a4b1bd8eb" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 129.77<br>     <b>Brightness TI4:</b> 340.41<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.6637, -12.9812     </div>`)[0];
+                popup_5da161e27ce580e6d3c3d6e2f3fcd6ef.setContent(html_6e2837b3943cfdf964dc512a4b1bd8eb);
+            
+        
+
+        circle_marker_28b7668afb91fa88917a8027d5bddb1f.bindPopup(popup_5da161e27ce580e6d3c3d6e2f3fcd6ef)
+        ;
+
+        
+    
+    
+            circle_marker_28b7668afb91fa88917a8027d5bddb1f.bindTooltip(
+                `<div>
+                     Extreme | FRP: 129.77
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1283f454e55676d6086c352b0000e51e = L.circleMarker(
+                [9.97711, -13.03736],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.677587515838043, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_bbb3041a1f62be2b60609d7f10d91241 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a4067291073dc0ad65fff99725975e8d = $(`<div id="html_a4067291073dc0ad65fff99725975e8d" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 128.94<br>     <b>Brightness TI4:</b> 353.13<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.9771, -13.0374     </div>`)[0];
+                popup_bbb3041a1f62be2b60609d7f10d91241.setContent(html_a4067291073dc0ad65fff99725975e8d);
+            
+        
+
+        circle_marker_1283f454e55676d6086c352b0000e51e.bindPopup(popup_bbb3041a1f62be2b60609d7f10d91241)
+        ;
+
+        
+    
+    
+            circle_marker_1283f454e55676d6086c352b0000e51e.bindTooltip(
+                `<div>
+                     Extreme | FRP: 128.94
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80594535b946123bed9f3b3df4bd8d0b = L.circleMarker(
+                [9.98189, -13.03858],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.677587515838043, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_a2bd26485ea270e691854a43b567d9ac = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a9336c8e84c18264413be683a24d2738 = $(`<div id="html_a9336c8e84c18264413be683a24d2738" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 128.94<br>     <b>Brightness TI4:</b> 367.00<br>     <b>Confidence:</b> h<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.9819, -13.0386     </div>`)[0];
+                popup_a2bd26485ea270e691854a43b567d9ac.setContent(html_a9336c8e84c18264413be683a24d2738);
+            
+        
+
+        circle_marker_80594535b946123bed9f3b3df4bd8d0b.bindPopup(popup_a2bd26485ea270e691854a43b567d9ac)
+        ;
+
+        
+    
+    
+            circle_marker_80594535b946123bed9f3b3df4bd8d0b.bindTooltip(
+                `<div>
+                     Extreme | FRP: 128.94
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_47a0e891de2839eb0b13dff5150808c0 = L.circleMarker(
+                [9.97802, -13.03234],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.677587515838043, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_c762d3212d2838509ea1280efb452764 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b58b2f21b7cfde6400765c7df2ca2de2 = $(`<div id="html_b58b2f21b7cfde6400765c7df2ca2de2" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 128.94<br>     <b>Brightness TI4:</b> 331.58<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.9780, -13.0323     </div>`)[0];
+                popup_c762d3212d2838509ea1280efb452764.setContent(html_b58b2f21b7cfde6400765c7df2ca2de2);
+            
+        
+
+        circle_marker_47a0e891de2839eb0b13dff5150808c0.bindPopup(popup_c762d3212d2838509ea1280efb452764)
+        ;
+
+        
+    
+    
+            circle_marker_47a0e891de2839eb0b13dff5150808c0.bindTooltip(
+                `<div>
+                     Extreme | FRP: 128.94
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a917a0f690087637cab8560530658975 = L.circleMarker(
+                [9.98286, -13.03324],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.677587515838043, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_b86ac3f717e79049ef47b3ec56ac2b69 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e2bf58ceca86f90a6308a8ad2dc14248 = $(`<div id="html_e2bf58ceca86f90a6308a8ad2dc14248" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 128.94<br>     <b>Brightness TI4:</b> 335.63<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.9829, -13.0332     </div>`)[0];
+                popup_b86ac3f717e79049ef47b3ec56ac2b69.setContent(html_e2bf58ceca86f90a6308a8ad2dc14248);
+            
+        
+
+        circle_marker_a917a0f690087637cab8560530658975.bindPopup(popup_b86ac3f717e79049ef47b3ec56ac2b69)
+        ;
+
+        
+    
+    
+            circle_marker_a917a0f690087637cab8560530658975.bindTooltip(
+                `<div>
+                     Extreme | FRP: 128.94
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b4157266186649e61fc0ace6edaeaac3 = L.circleMarker(
+                [-37.09331, 149.20033],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.671199167724584, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_3e8cc954380208f76d1445fffe5a9cfd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c257d96c9c63716804c08c50165cfeae = $(`<div id="html_c257d96c9c63716804c08c50165cfeae" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:06:00<br>     <b>FRP:</b> 128.65<br>     <b>Brightness TI4:</b> 326.11<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -37.0933, 149.2003     </div>`)[0];
+                popup_3e8cc954380208f76d1445fffe5a9cfd.setContent(html_c257d96c9c63716804c08c50165cfeae);
+            
+        
+
+        circle_marker_b4157266186649e61fc0ace6edaeaac3.bindPopup(popup_3e8cc954380208f76d1445fffe5a9cfd)
+        ;
+
+        
+    
+    
+            circle_marker_b4157266186649e61fc0ace6edaeaac3.bindTooltip(
+                `<div>
+                     Extreme | FRP: 128.65
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b607d5d751ade2410ea96e898b499b50 = L.circleMarker(
+                [20.56642, 100.35767],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.666789214361163, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_630434c046e2e9b8b38862028c7bcd0a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a91978591e91b71b3cfcfe549fdb0ae0 = $(`<div id="html_a91978591e91b71b3cfcfe549fdb0ae0" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 07:03:00<br>     <b>FRP:</b> 128.45<br>     <b>Brightness TI4:</b> 354.03<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 20.5664, 100.3577     </div>`)[0];
+                popup_630434c046e2e9b8b38862028c7bcd0a.setContent(html_a91978591e91b71b3cfcfe549fdb0ae0);
+            
+        
+
+        circle_marker_b607d5d751ade2410ea96e898b499b50.bindPopup(popup_630434c046e2e9b8b38862028c7bcd0a)
+        ;
+
+        
+    
+    
+            circle_marker_b607d5d751ade2410ea96e898b499b50.bindTooltip(
+                `<div>
+                     Extreme | FRP: 128.45
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a63e4cf79e6371eb47045b2d6f93f766 = L.circleMarker(
+                [-14.35141, 130.21683],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.54188596057335, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_ce88770875240b9580e81bef7dc3721e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ec80fafed2a263a696355a24c1ce41ee = $(`<div id="html_ec80fafed2a263a696355a24c1ce41ee" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 05:12:00<br>     <b>FRP:</b> 122.85<br>     <b>Brightness TI4:</b> 338.37<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> -14.3514, 130.2168     </div>`)[0];
+                popup_ce88770875240b9580e81bef7dc3721e.setContent(html_ec80fafed2a263a696355a24c1ce41ee);
+            
+        
+
+        circle_marker_a63e4cf79e6371eb47045b2d6f93f766.bindPopup(popup_ce88770875240b9580e81bef7dc3721e)
+        ;
+
+        
+    
+    
+            circle_marker_a63e4cf79e6371eb47045b2d6f93f766.bindTooltip(
+                `<div>
+                     Extreme | FRP: 122.85
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1fdbcd22a2e2c2f466b27f8e62c5b3ce = L.circleMarker(
+                [9.27044, -12.79454],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.539629951540086, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_07a9c212fca7ce7a5a7c289e98bc8b84 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_382458b78127bd65aa39aa7d7c6a56bc = $(`<div id="html_382458b78127bd65aa39aa7d7c6a56bc" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 13:48:00<br>     <b>FRP:</b> 122.75<br>     <b>Brightness TI4:</b> 352.37<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 9.2704, -12.7945     </div>`)[0];
+                popup_07a9c212fca7ce7a5a7c289e98bc8b84.setContent(html_382458b78127bd65aa39aa7d7c6a56bc);
+            
+        
+
+        circle_marker_1fdbcd22a2e2c2f466b27f8e62c5b3ce.bindPopup(popup_07a9c212fca7ce7a5a7c289e98bc8b84)
+        ;
+
+        
+    
+    
+            circle_marker_1fdbcd22a2e2c2f466b27f8e62c5b3ce.bindTooltip(
+                `<div>
+                     Extreme | FRP: 122.75
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c3db341445ac5b4f530ef5b938a76f54 = L.circleMarker(
+                [42.88483, 128.32921],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.522001448750263, "stroke": true, "weight": 1}
+            ).addTo(map_222df4fa4d5aad3010874986d0307ed3);
+        
+    
+        var popup_98e650129d668dcff9d0d3b8ef89a606 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8a4f64ab2f4db55f1f587f67a7ade1be = $(`<div id="html_8a4f64ab2f4db55f1f587f67a7ade1be" style="width: 100.0%; height: 100.0%;">     <b>Wildfire detection</b><br>     <b>DateTime:</b> 2026-04-23 03:47:00<br>     <b>FRP:</b> 121.97<br>     <b>Brightness TI4:</b> 343.96<br>     <b>Confidence:</b> n<br>     <b>Intensity:</b> Extreme<br>     <b>Day/Night:</b> D<br>     <b>Lat/Lon:</b> 42.8848, 128.3292     </div>`)[0];
+                popup_98e650129d668dcff9d0d3b8ef89a606.setContent(html_8a4f64ab2f4db55f1f587f67a7ade1be);
+            
+        
+
+        circle_marker_c3db341445ac5b4f530ef5b938a76f54.bindPopup(popup_98e650129d668dcff9d0d3b8ef89a606)
+        ;
+
+        
+    
+    
+            circle_marker_c3db341445ac5b4f530ef5b938a76f54.bindTooltip(
+                `<div>
+                     Extreme | FRP: 121.97
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
